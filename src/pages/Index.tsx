@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import { Link } from "react-router-dom";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import CursilloLogo from "@/components/CursilloLogo";
 
 const Index = () => {
   const reveal = useScrollReveal();
@@ -59,28 +60,25 @@ const Index = () => {
 
         <div className="relative z-10 container grid grid-cols-1 lg:grid-cols-2 gap-[60px] items-center">
           {/* Left column */}
-          <div className="flex flex-col items-start">
+          <div className="flex flex-col items-start fade-up" ref={reveal}>
             {/* Logo mark */}
             <div className="mb-7">
-              <svg width="64" height="82" viewBox="0 0 32 42" fill="none">
-                <rect x="12" y="0" width="8" height="42" rx="1" fill="hsl(var(--primary))" />
-                <rect x="0" y="10" width="32" height="8" rx="1" fill="hsl(var(--primary))" />
-                <rect x="13" y="1" width="6" height="40" rx="0.5" fill="hsl(var(--secondary))" opacity="0.3" />
-              </svg>
+              <CursilloLogo width={72} height={92} variant="light" />
             </div>
 
             <h1 className="font-serif text-[2rem] sm:text-[2.6rem] lg:text-[3.4rem] font-bold text-white leading-[1.1] mb-1.5 tracking-tight">
-              Cursillos in{" "}
-              <em className="not-italic font-normal text-gold">Christianity</em>
+              Cursillos <em className="not-italic font-normal text-gold">in</em>
+              <br />
+              Christianity
             </h1>
 
             <p className="text-[0.95rem] text-white/55 font-medium font-sans mb-1.5">
               Diocese of St. Augustine — Jacksonville, Florida
             </p>
 
-            <p className="font-serif italic text-[1.5rem] sm:text-[1.2rem] md:text-[1.5rem] font-medium mb-7 text-rainbow-gradient">
+            <div className="font-serif italic text-[1.5rem] sm:text-[1.2rem] md:text-[1.5rem] font-medium mb-7 text-rainbow-gradient">
               De Colores!
-            </p>
+            </div>
 
             <p className="text-[1.05rem] text-white/65 max-w-[460px] mb-9 leading-[1.75] font-sans">
               Changing lives through three-day weekends of faith, community, and friendship since 1974.
@@ -103,7 +101,7 @@ const Index = () => {
           </div>
 
           {/* Right column — Quote card */}
-          <div className="relative">
+          <div className="relative fade-up" ref={reveal} style={{ transitionDelay: "0.15s" }}>
             <div
               className="relative rounded-2xl backdrop-blur-sm overflow-hidden"
               style={{
@@ -119,11 +117,10 @@ const Index = () => {
                   background: "linear-gradient(90deg, hsl(4,65%,48%), hsl(28,80%,52%), hsl(46,88%,50%), hsl(145,63%,42%), hsl(204,60%,44%), hsl(282,44%,47%))",
                 }}
               />
-              {/* Cross icon */}
-              <svg width="24" height="32" viewBox="0 0 32 42" fill="none" className="mb-5 opacity-40">
-                <rect x="12" y="0" width="8" height="42" rx="1" fill="white" />
-                <rect x="0" y="10" width="32" height="8" rx="1" fill="white" />
-              </svg>
+              {/* Quote cross icon */}
+              <div className="mb-5">
+                <CursilloLogo width={32} height={41} variant="gold" />
+              </div>
               <blockquote className="font-serif text-[1.2rem] sm:text-[1.45rem] italic text-white/90 leading-[1.5] mb-4 font-normal">
                 "Make a friend, be a friend, bring a friend to Christ."
               </blockquote>
@@ -193,8 +190,8 @@ const Index = () => {
               <div
                 key={item.num}
                 ref={reveal}
-                className={`fade-up stagger-${i + 1} relative bg-card rounded-xl border border-border/40 overflow-hidden hover-lift`}
-                style={{ padding: "36px 28px" }}
+                className="fade-up relative bg-card rounded-xl border border-border/40 overflow-hidden hover-lift"
+                style={{ padding: "36px 28px", transitionDelay: `${i * 0.1}s` }}
               >
                 <div
                   className="absolute top-0 left-0 w-1 h-full"
@@ -243,8 +240,8 @@ const Index = () => {
                 key={event.title}
                 to={event.to}
                 ref={reveal}
-                className={`fade-up stagger-${i + 1} flex gap-5 no-underline text-foreground border border-light-tan rounded-xl hover:border-primary hover:shadow-lg transition-all duration-250`}
-                style={{ padding: 28, background: "hsl(var(--warm-white))" }}
+                className="fade-up flex gap-5 no-underline text-foreground border border-light-tan rounded-xl hover:border-primary hover:shadow-lg transition-all duration-250"
+                style={{ padding: 28, background: "hsl(var(--warm-white))", transitionDelay: `${i * 0.1}s` }}
               >
                 <div className="flex flex-col items-center justify-center min-w-[60px] bg-cream rounded-[10px] py-3 px-2">
                   <span className="text-[0.7rem] uppercase tracking-[0.08em] text-primary font-semibold font-sans">
@@ -280,8 +277,7 @@ const Index = () => {
       <section className="py-20 px-6 bg-cream relative overflow-hidden">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
-            {/* Welcome text */}
-            <div ref={reveal} className="fade-left">
+            <div ref={reveal} className="fade-up">
               <p className="text-[0.75rem] uppercase tracking-[0.12em] text-primary font-semibold mb-3 font-sans">
                 Welcome
               </p>
@@ -296,13 +292,11 @@ const Index = () => {
               </p>
             </div>
 
-            {/* Mission box */}
-            <div ref={reveal} className="fade-right">
+            <div ref={reveal} className="fade-up" style={{ transitionDelay: "0.15s" }}>
               <div
                 className="relative bg-card border border-border/60 rounded-[14px] overflow-hidden"
                 style={{ padding: "40px 32px" }}
               >
-                {/* Rainbow left bar */}
                 <div
                   className="absolute top-0 left-0 w-1 h-full rounded-l-[14px]"
                   style={{
@@ -328,7 +322,6 @@ const Index = () => {
         className="relative py-20 px-6 overflow-hidden text-center"
         style={{ background: "hsl(var(--primary))" }}
       >
-        {/* Cross pattern overlay */}
         <div
           className="absolute inset-0"
           style={{
@@ -336,7 +329,7 @@ const Index = () => {
           }}
         />
 
-        <div ref={reveal} className="fade-up-scale relative z-10 container max-w-lg mx-auto">
+        <div ref={reveal} className="fade-up relative z-10 container max-w-lg mx-auto">
           <h2 className="font-serif text-[1.8rem] sm:text-[2.4rem] font-semibold text-white mb-3 leading-tight">
             Ready to Begin Your Journey?
           </h2>

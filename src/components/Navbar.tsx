@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import RainbowStrip from "./RainbowStrip";
+import CursilloLogo from "./CursilloLogo";
 
 const navLinks = [
   { to: "/", label: "Home" },
@@ -17,12 +18,10 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
-  // Close mobile menu on route change
   useEffect(() => {
     setOpen(false);
   }, [location.pathname]);
 
-  // Scroll shadow
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -31,10 +30,8 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Fixed rainbow strip */}
       <RainbowStrip className="fixed top-0 left-0 right-0 z-[200]" />
 
-      {/* Nav */}
       <header
         className={cn(
           "fixed top-[5px] left-0 right-0 z-[100] bg-background/95 backdrop-blur-md border-b transition-shadow duration-300",
@@ -43,12 +40,7 @@ const Navbar = () => {
       >
         <div className="container flex h-[68px] items-center justify-between">
           <Link to="/" className="flex items-center gap-3 no-underline">
-            {/* Cross SVG logo mark */}
-            <svg width="32" height="42" viewBox="0 0 32 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="12" y="0" width="8" height="42" rx="1" fill="hsl(348, 70%, 33%)" />
-              <rect x="0" y="10" width="32" height="8" rx="1" fill="hsl(348, 70%, 33%)" />
-              <rect x="13" y="1" width="6" height="40" rx="0.5" fill="hsl(43, 50%, 54%)" opacity="0.3" />
-            </svg>
+            <CursilloLogo width={36} height={46} variant="dark" />
             <div>
               <span className="text-lg font-semibold font-serif text-foreground leading-tight block">
                 Cursillo
@@ -59,7 +51,6 @@ const Navbar = () => {
             </div>
           </Link>
 
-          {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-7">
             {navLinks.map((link) => (
               <Link
@@ -83,7 +74,6 @@ const Navbar = () => {
             </Link>
           </nav>
 
-          {/* Mobile hamburger */}
           <button
             className="lg:hidden p-2"
             onClick={() => setOpen(!open)}
@@ -94,7 +84,6 @@ const Navbar = () => {
         </div>
       </header>
 
-      {/* Mobile menu */}
       {open && (
         <div className="fixed top-[73px] inset-x-0 bottom-0 bg-background z-[99] p-6 lg:hidden overflow-y-auto animate-fade-in">
           <nav className="flex flex-col gap-1">
