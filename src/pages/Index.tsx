@@ -34,7 +34,7 @@ const Index = () => {
                 <ArrowRight className="ml-1.5 h-4 w-4" />
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="rounded-md bg-white/20 border-white/40 text-white hover:bg-white/30 text-base backdrop-blur-sm">
+            <Button asChild size="lg" className="rounded-md bg-secondary text-secondary-foreground hover:bg-secondary/90 text-base shadow-lg">
               <Link to="/documents">Apply for a Weekend</Link>
             </Button>
           </div>
