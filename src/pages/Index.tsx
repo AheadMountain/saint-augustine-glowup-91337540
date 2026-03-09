@@ -1,60 +1,47 @@
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import { Calendar, FileText, Users, Heart, ArrowRight, Church } from "lucide-react";
+import { ArrowRight, Heart, Users, Church, Calendar } from "lucide-react";
 
 const Index = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-secondary via-secondary to-secondary/90 py-20 md:py-32">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-40 h-40 rounded-full bg-primary blur-3xl" />
-          <div className="absolute bottom-10 right-10 w-60 h-60 rounded-full bg-primary blur-3xl" />
-        </div>
-        <div className="container relative text-center">
-          <div className="inline-flex items-center gap-2 rounded-full bg-primary/20 px-4 py-1.5 text-sm text-primary mb-6">
-            <Church className="h-4 w-4" />
-            <span style={{ fontFamily: 'system-ui, sans-serif' }}>Diocese of St. Augustine</span>
-          </div>
-          <h1 className="text-4xl md:text-6xl font-bold text-secondary-foreground mb-4" style={{ fontFamily: 'system-ui, sans-serif' }}>
-            Cursillos in Christianity
-          </h1>
-          <p className="text-xl md:text-2xl text-primary italic font-semibold mb-2">
-            De Colores!
-          </p>
-          <p className="text-lg text-secondary-foreground/80 max-w-2xl mx-auto mb-8">
-            A movement of the Church that, through a method of its own, tries to put what is fundamental to being Christian into life.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="text-base font-semibold shadow-lg">
-              <Link to="/events">
-                View Upcoming Events
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="text-base bg-secondary-foreground/10 border-secondary-foreground/20 text-secondary-foreground hover:bg-secondary-foreground/20">
-              <Link to="/documents">Apply for a Weekend</Link>
-            </Button>
+      <section className="relative py-20 md:py-28 bg-muted/40">
+        <div className="container">
+          <div className="max-w-2xl">
+            <p className="text-sm font-medium uppercase tracking-widest text-primary mb-4" style={{ fontFamily: 'system-ui, sans-serif' }}>
+              Diocese of St. Augustine
+            </p>
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-3 leading-tight" style={{ fontFamily: 'system-ui, sans-serif' }}>
+              Cursillos in Christianity
+            </h1>
+            <p className="text-xl italic text-primary mb-6">De Colores!</p>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-lg">
+              A movement of the Church that tries to put what is fundamental to being Christian into life.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <Button asChild size="lg" className="rounded-full">
+                <Link to="/events">
+                  View Events
+                  <ArrowRight className="ml-1.5 h-4 w-4" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="rounded-full">
+                <Link to="/documents">Apply for a Weekend</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
 
       {/* What is Cursillo */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-20">
         <div className="container">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: 'system-ui, sans-serif' }}>
-              What is Cursillo?
-            </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Cursillo is a movement of the Church that, through a method of its own, tries to put what is fundamental 
-              to being Christian into life. The Cursillo Movement helps Catholics deepen their faith through a three-day 
-              weekend experience followed by ongoing community support known as the "Fourth Day."
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <h2 className="text-2xl md:text-3xl font-bold mb-10" style={{ fontFamily: 'system-ui, sans-serif' }}>
+            What is Cursillo?
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {[
               {
                 icon: Heart,
@@ -72,90 +59,61 @@ const Index = () => {
                 description: "Larger gatherings where cursillistas come together to share, encourage, and celebrate."
               }
             ].map((item) => (
-              <Card key={item.title} className="text-center border-none shadow-md hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className="mx-auto mb-2 flex h-14 w-14 items-center justify-center rounded-full bg-accent">
-                    <item.icon className="h-7 w-7 text-primary" />
-                  </div>
-                  <CardTitle className="text-xl" style={{ fontFamily: 'system-ui, sans-serif' }}>{item.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{item.description}</p>
-                </CardContent>
-              </Card>
+              <div key={item.title} className="rounded-2xl bg-card border p-6">
+                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10">
+                  <item.icon className="h-5 w-5 text-primary" />
+                </div>
+                <h3 className="text-lg font-semibold mb-2" style={{ fontFamily: 'system-ui, sans-serif' }}>{item.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Upcoming Weekends */}
-      <section className="py-16 bg-accent/50">
+      <section className="py-16 bg-secondary">
         <div className="container">
-          <h2 className="text-3xl font-bold text-center mb-10" style={{ fontFamily: 'system-ui, sans-serif' }}>
+          <h2 className="text-2xl md:text-3xl font-bold text-secondary-foreground mb-8" style={{ fontFamily: 'system-ui, sans-serif' }}>
             Upcoming Cursillo Weekends
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-            <Card className="overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-              <div className="h-2 bg-primary" />
-              <CardHeader>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground mb-1">
-                  <Calendar className="h-4 w-4" />
-                  <span>2025</span>
-                </div>
-                <CardTitle style={{ fontFamily: 'system-ui, sans-serif' }}>Men's Weekend #139</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-4">
-                  A transformative three-day experience for men seeking to deepen their relationship with Christ.
-                </p>
-                <Button asChild variant="outline" size="sm">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-2xl">
+            {[
+              { icon: "♂", title: "Men's Weekend #139", date: "2025 — Contact for dates", label: "REGISTER" },
+              { icon: "♀", title: "Women's Weekend #137", date: "2025 — Contact for dates", label: "REGISTER" },
+            ].map((w) => (
+              <div key={w.title} className="rounded-2xl bg-secondary-foreground/5 p-6 flex flex-col">
+                <span className="text-2xl mb-3">{w.icon}</span>
+                <h3 className="text-xl font-bold text-secondary-foreground mb-1" style={{ fontFamily: 'system-ui, sans-serif' }}>
+                  {w.title}
+                </h3>
+                <p className="text-sm text-secondary-foreground/70 mb-5">{w.date}</p>
+                <Button asChild variant="outline" size="sm" className="rounded-full w-fit border-secondary-foreground/20 text-secondary-foreground hover:bg-secondary-foreground/10">
                   <Link to="/documents">
-                    <FileText className="mr-2 h-4 w-4" />
-                    Apply Now
+                    {w.label}
+                    <ArrowRight className="ml-1 h-3.5 w-3.5" />
                   </Link>
                 </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-              <div className="h-2 bg-primary" />
-              <CardHeader>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground mb-1">
-                  <Calendar className="h-4 w-4" />
-                  <span>2025</span>
-                </div>
-                <CardTitle style={{ fontFamily: 'system-ui, sans-serif' }}>Women's Weekend #137</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-4">
-                  A transformative three-day experience for women seeking to deepen their relationship with Christ.
-                </p>
-                <Button asChild variant="outline" size="sm">
-                  <Link to="/documents">
-                    <FileText className="mr-2 h-4 w-4" />
-                    Apply Now
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* CTA */}
       <section className="py-16">
-        <div className="container text-center">
-          <h2 className="text-3xl font-bold mb-4" style={{ fontFamily: 'system-ui, sans-serif' }}>
-            Ready to Begin Your Journey?
+        <div className="container max-w-2xl">
+          <h2 className="text-2xl md:text-3xl font-bold mb-3" style={{ fontFamily: 'system-ui, sans-serif' }}>
+            Ready to Begin?
           </h2>
-          <p className="text-muted-foreground text-lg mb-8 max-w-xl mx-auto">
-            Whether you're considering your first Cursillo weekend or looking to stay connected with fellow cursillistas, we welcome you.
+          <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
+            Whether you're considering your first Cursillo weekend or looking to stay connected, we welcome you.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg">
+          <div className="flex flex-wrap gap-3">
+            <Button asChild size="lg" className="rounded-full">
               <Link to="/events">Explore Events</Link>
             </Button>
-            <Button asChild variant="outline" size="lg">
+            <Button asChild variant="outline" size="lg" className="rounded-full">
               <Link to="/secretariat">Contact Us</Link>
             </Button>
           </div>

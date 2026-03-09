@@ -1,5 +1,4 @@
 import Layout from "@/components/Layout";
-import { Card, CardContent } from "@/components/ui/card";
 import { FileText, Download, ClipboardList, BookOpen, File } from "lucide-react";
 
 const documents = [
@@ -16,43 +15,41 @@ const documents = [
 const Documents = () => {
   return (
     <Layout>
-      <section className="bg-secondary py-16">
-        <div className="container text-center">
-          <h1 className="text-4xl font-bold text-secondary-foreground mb-3" style={{ fontFamily: 'system-ui, sans-serif' }}>
+      <section className="py-12 bg-muted/40">
+        <div className="container">
+          <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2" style={{ fontFamily: 'system-ui, sans-serif' }}>
             Documents
           </h1>
-          <p className="text-secondary-foreground/70 text-lg">
+          <p className="text-muted-foreground">
             Applications, guides, and resources for the Cursillo community
           </p>
         </div>
       </section>
 
-      <section className="py-16">
+      <section className="py-12">
         <div className="container max-w-3xl">
-          <div className="space-y-4">
+          <div className="space-y-3">
             {documents.map((doc) => (
-              <Card
+              <div
                 key={doc.title}
-                className={`shadow-sm hover:shadow-md transition-shadow cursor-pointer group ${doc.featured ? 'ring-2 ring-primary/30' : ''}`}
+                className={`rounded-2xl border bg-card p-4 flex items-center gap-4 cursor-pointer hover:border-primary/30 transition-colors group ${doc.featured ? 'ring-1 ring-primary/20 border-primary/20' : ''}`}
               >
-                <CardContent className="flex items-center gap-4 p-4">
-                  <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-lg transition-colors ${doc.featured ? 'bg-primary/20' : 'bg-accent group-hover:bg-primary/20'}`}>
-                    <doc.icon className="h-6 w-6 text-primary" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="font-semibold text-foreground" style={{ fontFamily: 'system-ui, sans-serif' }}>
-                      {doc.title}
-                      {doc.featured && (
-                        <span className="ml-2 inline-flex items-center rounded-full bg-primary/10 px-2 py-0.5 text-xs text-primary font-medium">
-                          Featured
-                        </span>
-                      )}
-                    </h3>
-                    <p className="text-sm text-muted-foreground">{doc.description}</p>
-                  </div>
-                  <Download className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
-                </CardContent>
-              </Card>
+                <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl transition-colors ${doc.featured ? 'bg-primary/15' : 'bg-primary/10 group-hover:bg-primary/15'}`}>
+                  <doc.icon className="h-5 w-5 text-primary" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h3 className="font-semibold text-foreground text-sm" style={{ fontFamily: 'system-ui, sans-serif' }}>
+                    {doc.title}
+                    {doc.featured && (
+                      <span className="ml-2 inline-flex items-center rounded-full bg-primary/10 px-2 py-0.5 text-[10px] text-primary font-semibold uppercase tracking-wider">
+                        Featured
+                      </span>
+                    )}
+                  </h3>
+                  <p className="text-xs text-muted-foreground mt-0.5">{doc.description}</p>
+                </div>
+                <Download className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
+              </div>
             ))}
           </div>
         </div>
