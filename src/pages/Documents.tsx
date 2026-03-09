@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import { FileText, Download, ClipboardList, BookOpen, File } from "lucide-react";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const documents = [
   { title: "Cursillo Weekend Application", icon: ClipboardList, description: "Application form for attending a Cursillo weekend", featured: true },
@@ -13,25 +14,28 @@ const documents = [
 ];
 
 const Documents = () => {
+  const reveal = useScrollReveal();
+
   return (
     <Layout>
-      <section className="py-12" style={{ background: "hsl(18, 8%, 16%)" }}>
+      <section className="py-12 md:py-16" style={{ background: "hsl(18, 8%, 16%)" }}>
         <div className="container">
-          <p className="text-xs uppercase tracking-[0.12em] text-white/40 font-semibold mb-2 font-sans">Resources</p>
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-2 font-serif">Documents</h1>
-          <p className="text-white/55 font-sans">
+          <p className="text-xs uppercase tracking-[0.12em] text-white/40 font-semibold mb-2 font-sans animate-fade-up" style={{ animationDelay: "0.1s", animationFillMode: "backwards" }}>Resources</p>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 font-serif animate-fade-up" style={{ animationDelay: "0.2s", animationFillMode: "backwards" }}>Documents</h1>
+          <p className="text-white/55 font-sans text-lg animate-fade-up" style={{ animationDelay: "0.3s", animationFillMode: "backwards" }}>
             Applications, guides, and resources for the Cursillo community
           </p>
         </div>
       </section>
 
-      <section className="py-14">
+      <section className="py-16 md:py-20">
         <div className="container max-w-3xl">
           <div className="space-y-3">
-            {documents.map((doc) => (
+            {documents.map((doc, i) => (
               <div
                 key={doc.title}
-                className={`bg-card border rounded-xl p-5 flex items-center gap-4 cursor-pointer hover:shadow-md transition-shadow group ${doc.featured ? 'ring-1 ring-primary/20 relative overflow-hidden' : ''}`}
+                ref={reveal}
+                className={`fade-up stagger-${Math.min(i + 1, 6)} bg-card border rounded-xl p-5 flex items-center gap-4 cursor-pointer hover-lift group ${doc.featured ? 'ring-1 ring-primary/20 relative overflow-hidden' : ''}`}
               >
                 {doc.featured && (
                   <div className="absolute top-0 left-0 w-1 h-full bg-primary" />
