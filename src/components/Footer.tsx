@@ -1,19 +1,17 @@
 import { Link } from "react-router-dom";
 import RainbowStrip from "./RainbowStrip";
+import CursilloLogo from "./CursilloLogo";
 
 const Footer = () => {
   return (
-    <footer className="relative" style={{ background: "hsl(18, 8%, 16%)", color: "rgba(255,255,255,0.6)" }}>
+    <footer className="relative" style={{ background: "hsl(var(--charcoal))", color: "rgba(255,255,255,0.6)" }}>
       <RainbowStrip className="absolute top-0 left-0 right-0" />
       <div className="container pt-16 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr] gap-12 pb-10 border-b border-white/[0.08] mb-8">
           {/* Brand */}
           <div className="flex flex-col gap-1">
-            <div className="flex items-center gap-3 mb-3">
-              <svg width="28" height="36" viewBox="0 0 32 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="12" y="0" width="8" height="42" rx="1" fill="hsl(348, 70%, 33%)" />
-                <rect x="0" y="10" width="32" height="8" rx="1" fill="hsl(348, 70%, 33%)" />
-              </svg>
+            <div className="flex items-center gap-3.5 mb-3">
+              <CursilloLogo width={32} height={41} variant="gold" />
               <div>
                 <span className="text-white font-serif text-xl font-semibold block leading-tight">
                   St. Augustine Cursillo
@@ -22,7 +20,7 @@ const Footer = () => {
               </div>
             </div>
             <span
-              className="font-serif italic text-lg font-medium mt-1"
+              className="font-serif italic text-lg font-medium mt-2"
               style={{
                 background: "linear-gradient(90deg, hsl(4,65%,48%), hsl(28,80%,52%), hsl(46,88%,50%), hsl(145,63%,42%), hsl(204,60%,44%))",
                 WebkitBackgroundClip: "text",
