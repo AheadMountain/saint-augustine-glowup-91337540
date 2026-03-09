@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cursillos in Christianity — Diocese of St. Augustine</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --crimson: #8B1A2B;
+    --gold: #C9A84C;
+    --forest: #2D5F3E;
+    --cream: #FAF6F0;
+    --warm-white: #FFFDF9;
+    --charcoal: #2C2825;
+    --brown: #5C4A3A;
+    --light-tan: #F0E8DC;
+    --text: #3D3530;
+    --text-light: #7A6E64;
+    --dc-red: #C0392B;
+    --dc-orange: #E67E22;
+    --dc-yellow: #F1C40F;
+    --dc-green: #27AE60;
+    --dc-blue: #2980B9;
+    --dc-purple: #8E44AD;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: var(--warm-white);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* RAINBOW STRIP */
+  .rainbow-strip {
+    height: 5px;
+    background: linear-gradient(90deg,
+      var(--dc-red) 0%, var(--dc-red) 16.6%,
+      var(--dc-orange) 16.6%, var(--dc-orange) 33.2%,
+      var(--dc-yellow) 33.2%, var(--dc-yellow) 49.8%,
+      var(--dc-green) 49.8%, var(--dc-green) 66.4%,
+      var(--dc-blue) 66.4%, var(--dc-blue) 83%,
+      var(--dc-purple) 83%, var(--dc-purple) 100%
+    );
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 5px;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(255, 253, 249, 0.94);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    transition: box-shadow 0.3s;
+  }
+  nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
+
+  .nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+  .nav-logo svg { flex-shrink: 0; }
+  .nav-logo-text {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    line-height: 1.2;
+  }
+  .nav-logo-text small {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--text-light);
+    letter-spacing: 0.02em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+    align-items: center;
+  }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-size: 0.88rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--crimson); }
+
+  .nav-cta {
+    background: var(--crimson);
+    color: white !important;
+    padding: 9px 22px;
+    border-radius: 6px;
+    font-size: 0.84rem !important;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: #6E1422 !important; }
+
+  .hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 28px;
+    height: 20px;
+    position: relative;
+  }
+  .hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--charcoal);
+    position: absolute;
+    left: 0;
+    transition: 0.3s;
+  }
+  .hamburger span:nth-child(1) { top: 0; }
+  .hamburger span:nth-child(2) { top: 9px; }
+  .hamburger span:nth-child(3) { top: 18px; }
+
+  /* HERO BANNER */
+  .hero-banner {
+    margin-top: 73px;
+    background: var(--charcoal);
+    position: relative;
+    overflow: hidden;
+    padding: 72px 24px 80px;
+  }
+  .hero-banner::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(201,168,76,0.1) 0%, rgba(139,26,43,0.06) 40%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-banner::after {
+    content: '';
+    position: absolute;
+    bottom: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 900px;
+    height: 400px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    background:
+      linear-gradient(var(--charcoal), var(--charcoal)) padding-box,
+      conic-gradient(from 200deg,
+        rgba(192,57,43,0.15),
+        rgba(230,126,34,0.12),
+        rgba(241,196,15,0.12),
+        rgba(39,174,96,0.1),
+        rgba(41,128,185,0.1),
+        rgba(142,68,173,0.08),
+        transparent 60%
+      ) border-box;
+    pointer-events: none;
+    opacity: 0.7;
+  }
+
+  .hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-left { display: flex; flex-direction: column; align-items: flex-start; }
+  .hero-logo-mark { margin-bottom: 28px; }
+
+  .hero-left h1 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 3.4rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #FFFFFF;
+    margin-bottom: 6px;
+    letter-spacing: -0.02em;
+  }
+  .hero-left h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--gold);
+  }
+
+  .hero-diocese-line {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+  .hero-de-colores {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 28px;
+    background: linear-gradient(90deg, var(--dc-red), var(--dc-orange), var(--dc-yellow), var(--dc-green), var(--dc-blue), var(--dc-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-left p {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.65);
+    max-width: 460px;
+    margin-bottom: 36px;
+    line-height: 1.75;
+  }
+
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--crimson); color: white;
+    padding: 14px 28px; border-radius: 8px;
+    text-decoration: none; font-size: 0.95rem; font-weight: 600;
+    transition: all 0.25s; border: none; cursor: pointer;
+  }
+  .btn-primary:hover { background: #A01E33; transform: translateY(-1px); }
+
+  .btn-ghost {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: transparent; color: rgba(255,255,255,0.85);
+    padding: 14px 28px; border-radius: 8px;
+    text-decoration: none; font-size: 0.95rem; font-weight: 600;
+    border: 1.5px solid rgba(255,255,255,0.2);
+    transition: all 0.25s; cursor: pointer;
+  }
+  .btn-ghost:hover { border-color: rgba(255,255,255,0.5); color: white; }
+
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: transparent; color: var(--text);
+    padding: 14px 28px; border-radius: 8px;
+    text-decoration: none; font-size: 0.95rem; font-weight: 600;
+    border: 1.5px solid var(--light-tan);
+    transition: all 0.25s; cursor: pointer;
+  }
+  .btn-secondary:hover { border-color: var(--crimson); color: var(--crimson); }
+
+  .hero-right { position: relative; }
+  .hero-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 44px 36px;
+    position: relative;
+    backdrop-filter: blur(4px);
+  }
+  .hero-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    border-radius: 16px 16px 0 0;
+    background: linear-gradient(90deg, var(--dc-red), var(--dc-orange), var(--dc-yellow), var(--dc-green), var(--dc-blue), var(--dc-purple));
+  }
+  .hero-card .quote-cross { margin-bottom: 20px; }
+  .hero-card blockquote {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.45rem;
+    font-style: italic;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.5;
+    font-weight: 400;
+    margin-bottom: 16px;
+  }
+  .hero-card cite {
+    font-style: normal;
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.4);
+    font-family: 'DM Sans', sans-serif;
+    letter-spacing: 0.02em;
+  }
+  .hero-card .stat-row {
+    display: flex; gap: 32px;
+    margin-top: 32px; padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .stat-item .stat-num {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.8rem; font-weight: 600;
+    color: var(--gold); line-height: 1;
+  }
+  .stat-item .stat-label {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.4);
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  /* SECTION STYLES */
+  section { padding: 80px 24px; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .section-label {
+    font-size: 0.75rem; text-transform: uppercase;
+    letter-spacing: 0.12em; color: var(--crimson);
+    font-weight: 600; margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Crimson Pro', serif;
+    font-size: 2.2rem; font-weight: 600;
+    color: var(--charcoal); margin-bottom: 16px;
+    letter-spacing: -0.01em;
+  }
+  .section-desc {
+    font-size: 1rem; color: var(--text-light);
+    max-width: 520px; line-height: 1.7; margin-bottom: 48px;
+  }
+
+  /* WHAT IS CURSILLO */
+  .what-section { background: var(--cream); }
+  .what-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+
+  .what-card {
+    background: var(--warm-white);
+    padding: 36px 28px; border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.04);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative; overflow: hidden;
+  }
+  .what-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(0,0,0,0.06); }
+  .what-card::before {
+    content: ''; position: absolute;
+    top: 0; left: 0; width: 4px; height: 100%;
+  }
+  .what-card:nth-child(1)::before { background: var(--dc-red); }
+  .what-card:nth-child(2)::before { background: var(--dc-green); }
+  .what-card:nth-child(3)::before { background: var(--dc-blue); }
+
+  .what-card .card-num {
+    font-family: 'Crimson Pro', serif;
+    font-size: 2.5rem; font-weight: 300;
+    color: var(--gold); line-height: 1; margin-bottom: 16px;
+  }
+  .what-card h3 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.35rem; font-weight: 600;
+    color: var(--charcoal); margin-bottom: 10px;
+  }
+  .what-card p { font-size: 0.92rem; color: var(--text-light); line-height: 1.7; }
+
+  /* EVENTS */
+  .events-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+  .event-card {
+    display: flex; gap: 20px; padding: 28px;
+    background: var(--warm-white);
+    border: 1px solid var(--light-tan);
+    border-radius: 12px; text-decoration: none; color: inherit;
+    transition: border-color 0.25s, box-shadow 0.25s;
+  }
+  .event-card:hover {
+    border-color: var(--crimson);
+    box-shadow: 0 4px 20px rgba(139, 26, 43, 0.08);
+  }
+
+  .event-date {
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    min-width: 60px; background: var(--cream);
+    border-radius: 10px; padding: 12px 8px;
+  }
+  .event-date .month {
+    font-size: 0.7rem; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--crimson); font-weight: 600;
+  }
+  .event-date .day {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.8rem; font-weight: 600;
+    color: var(--charcoal); line-height: 1.1;
+  }
+
+  .event-info h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 4px; color: var(--charcoal); }
+  .event-info .event-type {
+    font-size: 0.78rem; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--crimson);
+    font-weight: 600; margin-bottom: 6px;
+  }
+  .event-info p { font-size: 0.88rem; color: var(--text-light); }
+  .event-action {
+    font-size: 0.85rem; color: var(--crimson);
+    font-weight: 600; margin-top: 8px;
+    display: inline-flex; align-items: center; gap: 4px;
+  }
+
+  /* WELCOME / MISSION */
+  .welcome-section { background: var(--cream); position: relative; overflow: hidden; }
+  .welcome-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: start;
+  }
+
+  .welcome-text { font-size: 1.05rem; line-height: 1.85; color: var(--text-light); }
+  .welcome-text + .welcome-text { margin-top: 20px; }
+
+  .mission-box {
+    background: var(--warm-white);
+    border: 1px solid rgba(0,0,0,0.06);
+    border-radius: 14px; padding: 40px 32px;
+    position: relative; overflow: hidden;
+  }
+  .mission-box::before {
+    content: ''; position: absolute;
+    top: 0; left: 0; width: 4px; height: 100%;
+    background: linear-gradient(to bottom, var(--dc-red), var(--dc-orange), var(--dc-yellow), var(--dc-green), var(--dc-blue), var(--dc-purple));
+    border-radius: 4px 0 0 4px;
+  }
+  .mission-box h3 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.5rem; font-weight: 600;
+    color: var(--charcoal); margin-bottom: 16px;
+  }
+  .mission-box p { font-size: 0.95rem; line-height: 1.8; color: var(--text-light); }
+
+  /* CTA */
+  .cta-section {
+    background: var(--crimson); text-align: center;
+    padding: 80px 24px; position: relative; overflow: hidden;
+  }
+  .cta-section::before {
+    content: ''; position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .cta-content { position: relative; z-index: 1; }
+  .cta-section h2 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 2.4rem; font-weight: 600; color: white; margin-bottom: 12px;
+  }
+  .cta-section p {
+    font-size: 1.05rem; color: rgba(255,255,255,0.85);
+    margin-bottom: 36px; max-width: 480px;
+    margin-left: auto; margin-right: auto; line-height: 1.7;
+  }
+
+  .btn-white {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: white; color: var(--crimson);
+    padding: 14px 32px; border-radius: 8px;
+    text-decoration: none; font-size: 0.95rem; font-weight: 600;
+    transition: all 0.25s; margin: 0 8px;
+  }
+  .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+
+  .btn-outline-white {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: transparent; color: white;
+    padding: 14px 32px; border-radius: 8px;
+    text-decoration: none; font-size: 0.95rem; font-weight: 600;
+    border: 1.5px solid rgba(255,255,255,0.4);
+    transition: all 0.25s; margin: 0 8px;
+  }
+  .btn-outline-white:hover { border-color: white; background: rgba(255,255,255,0.1); }
+
+  /* FOOTER */
+  footer {
+    background: var(--charcoal);
+    color: rgba(255,255,255,0.6);
+    padding: 64px 24px 32px; position: relative;
+  }
+  footer::before {
+    content: ''; position: absolute;
+    top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg,
+      var(--dc-red) 0%, var(--dc-red) 16.6%,
+      var(--dc-orange) 16.6%, var(--dc-orange) 33.2%,
+      var(--dc-yellow) 33.2%, var(--dc-yellow) 49.8%,
+      var(--dc-green) 49.8%, var(--dc-green) 66.4%,
+      var(--dc-blue) 66.4%, var(--dc-blue) 83%,
+      var(--dc-purple) 83%, var(--dc-purple) 100%
+    );
+  }
+  .footer-inner { max-width: 1100px; margin: 0 auto; }
+  .footer-top {
+    display: grid; grid-template-columns: 2fr 1fr 1fr;
+    gap: 48px; padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 32px;
+  }
+  .footer-brand { display: flex; flex-direction: column; gap: 4px; }
+  .footer-logo-row { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
+  .footer-brand .footer-name {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.3rem; font-weight: 600; color: white;
+  }
+  .footer-brand .footer-loc { font-size: 0.85rem; }
+  .footer-brand .de-colores {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic; font-size: 1.15rem; margin-top: 8px;
+    background: linear-gradient(90deg, var(--dc-red), var(--dc-orange), var(--dc-yellow), var(--dc-green), var(--dc-blue));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+  .footer-col h4 {
+    font-size: 0.75rem; text-transform: uppercase;
+    letter-spacing: 0.12em; color: rgba(255,255,255,0.4);
+    margin-bottom: 16px; font-weight: 600;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 10px; }
+  .footer-col a {
+    text-decoration: none; color: rgba(255,255,255,0.6);
+    font-size: 0.9rem; transition: color 0.2s;
+  }
+  .footer-col a:hover { color: white; }
+  .footer-bottom {
+    display: flex; justify-content: space-between;
+    align-items: center; font-size: 0.8rem;
+  }
+
+  /* MOBILE MENU */
+  .mobile-menu {
+    display: none; position: fixed;
+    top: 73px; left: 0; right: 0; bottom: 0;
+    background: var(--warm-white); z-index: 99; padding: 32px 24px;
+  }
+  .mobile-menu.open { display: block; }
+  .mobile-menu ul { list-style: none; }
+  .mobile-menu li { margin-bottom: 8px; }
+  .mobile-menu a {
+    display: block; text-decoration: none; color: var(--text);
+    font-size: 1.15rem; font-weight: 500;
+    padding: 14px 0; border-bottom: 1px solid var(--light-tan);
+  }
+  .mobile-menu .btn-primary { margin-top: 24px; width: 100%; justify-content: center; }
+
+  /* ANIMATIONS */
+  .fade-up {
+    opacity: 0; transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero-left h1 { font-size: 2.6rem; }
+    .hero-right { max-width: 500px; }
+    .what-grid { grid-template-columns: 1fr; gap: 16px; }
+    .events-grid { grid-template-columns: 1fr; }
+    .welcome-grid { grid-template-columns: 1fr; gap: 40px; }
+    .footer-top { grid-template-columns: 1fr; gap: 32px; }
+    .nav-links { display: none; }
+    .hamburger { display: block; }
+  }
+
+  @media (max-width: 600px) {
+    .hero-banner { padding: 52px 24px 60px; }
+    .hero-left h1 { font-size: 2rem; }
+    .hero-de-colores { font-size: 1.2rem; }
+    .section-title { font-size: 1.7rem; }
+    .hero-card { padding: 32px 24px; }
+    .hero-card blockquote { font-size: 1.2rem; }
+    .hero-card .stat-row { gap: 20px; }
+    .cta-section h2 { font-size: 1.8rem; }
+    .btn-white, .btn-outline-white { margin: 4px 0; display: flex; justify-content: center; }
+    .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+    .hero-logo-mark svg { width: 56px; height: 72px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- DE COLORES RAINBOW STRIP -->
+<div class="rainbow-strip"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <svg width="36" height="46" viewBox="0 0 100 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- C shape: opening faces RIGHT. Arc from ~1:30 position, going left over top, down left side, across bottom, up to ~4:30 -->
+        <path d="M68 27 A42 42 0 1 0 68 97" stroke="#2C2825" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <!-- Cross vertical beam — tapers to point top and bottom -->
+        <path d="M50 2 L47 44 L47 50 L47 60 L47 66 L47 112 L50 126 L53 112 L53 66 L53 60 L53 50 L53 44 Z" fill="#2C2825"/>
+        <!-- Horizontal crossbeam — swept pointed ends extending past circle -->
+        <path d="M2 52 L47 48 L47 56 L2 52 Z" fill="#2C2825"/>
+        <path d="M98 52 L53 48 L53 56 L98 52 Z" fill="#2C2825"/>
+      </svg>
+      <div class="nav-logo-text">
+        Cursillo
+        <small>Diocese of St. Augustine</small>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#">Newsletters</a></li>
+      <li><a href="#">Documents</a></li>
+      <li><a href="#">Secretariat</a></li>
+      <li><a href="#cta" class="nav-cta">Apply Now</a></li>
+    </ul>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#about" onclick="toggleMenu()">About</a></li>
+    <li><a href="#events" onclick="toggleMenu()">Events</a></li>
+    <li><a href="#" onclick="toggleMenu()">Newsletters</a></li>
+    <li><a href="#" onclick="toggleMenu()">Documents</a></li>
+    <li><a href="#" onclick="toggleMenu()">Secretariat</a></li>
+  </ul>
+  <a href="#cta" class="btn-primary" onclick="toggleMenu()">Apply for a Weekend</a>
+</div>
+
+<!-- HERO BANNER -->
+<section class="hero-banner">
+  <div class="hero-inner">
+    <div class="hero-left fade-up">
+      <div class="hero-logo-mark">
+        <svg width="72" height="92" viewBox="0 0 100 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M68 27 A42 42 0 1 0 68 97" stroke="#C9A84C" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.7"/>
+          <path d="M50 2 L47 44 L47 50 L47 60 L47 66 L47 112 L50 126 L53 112 L53 66 L53 60 L53 50 L53 44 Z" fill="white" opacity="0.9"/>
+          <path d="M2 52 L47 48 L47 56 L2 52 Z" fill="white" opacity="0.9"/>
+          <path d="M98 52 L53 48 L53 56 L98 52 Z" fill="white" opacity="0.9"/>
+        </svg>
+      </div>
+      <h1>Cursillos <em>in</em><br>Christianity</h1>
+      <p class="hero-diocese-line">Diocese of St. Augustine — Jacksonville, Florida</p>
+      <div class="hero-de-colores">De Colores!</div>
+      <p>Changing lives through three-day weekends of faith, community, and friendship since 1974.</p>
+      <div class="hero-actions">
+        <a href="#events" class="btn-primary">View Upcoming Events</a>
+        <a href="#cta" class="btn-ghost">Apply for a Weekend</a>
+      </div>
+    </div>
+    <div class="hero-right fade-up" style="transition-delay: 0.15s">
+      <div class="hero-card">
+        <div class="quote-cross">
+          <svg width="32" height="41" viewBox="0 0 100 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M68 27 A42 42 0 1 0 68 97" stroke="#C9A84C" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.3"/>
+            <path d="M50 2 L47 44 L47 50 L47 60 L47 66 L47 112 L50 126 L53 112 L53 66 L53 60 L53 50 L53 44 Z" fill="#C9A84C" opacity="0.4"/>
+            <path d="M2 52 L47 48 L47 56 L2 52 Z" fill="#C9A84C" opacity="0.4"/>
+            <path d="M98 52 L53 48 L53 56 L98 52 Z" fill="#C9A84C" opacity="0.4"/>
+          </svg>
+        </div>
+        <blockquote>"Make a friend, be a friend, bring a friend to Christ."</blockquote>
+        <cite>— The Cursillo motto</cite>
+        <div class="stat-row">
+          <div class="stat-item">
+            <div class="stat-num">50+</div>
+            <div class="stat-label">Years</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">139</div>
+            <div class="stat-label">Weekends</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">1974</div>
+            <div class="stat-label">Founded</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT IS CURSILLO -->
+<section class="what-section" id="about">
+  <div class="section-inner">
+    <div class="section-label fade-up">What is Cursillo?</div>
+    <h2 class="section-title fade-up">Three pillars of the movement</h2>
+    <p class="section-desc fade-up">Cursillo is a movement within the Catholic Church that helps people deepen their faith through community, study, and action.</p>
+    <div class="what-grid">
+      <div class="what-card fade-up">
+        <div class="card-num">01</div>
+        <h3>The Weekend</h3>
+        <p>A three-day experience of living in Christian community — filled with talks, discussions, worship, and lasting friendships.</p>
+      </div>
+      <div class="what-card fade-up" style="transition-delay: 0.1s">
+        <div class="card-num">02</div>
+        <h3>Group Reunion</h3>
+        <p>Small groups that meet regularly to share their journey, support one another, and stay accountable in faith.</p>
+      </div>
+      <div class="what-card fade-up" style="transition-delay: 0.2s">
+        <div class="card-num">03</div>
+        <h3>Ultreya</h3>
+        <p>Larger gatherings where cursillistas come together to share, encourage, and celebrate what God is doing in their lives.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UPCOMING EVENTS -->
+<section id="events" style="background: var(--warm-white);">
+  <div class="section-inner">
+    <div class="section-label fade-up">Upcoming</div>
+    <h2 class="section-title fade-up">Cursillo Weekends & Events</h2>
+    <p class="section-desc fade-up">Find the next weekend retreat or gathering near you. Space is limited — register early.</p>
+    <div class="events-grid">
+      <a class="event-card fade-up" href="#">
+        <div class="event-date">
+          <span class="month">Mar</span>
+          <span class="day">5</span>
+        </div>
+        <div class="event-info">
+          <div class="event-type">English Weekend</div>
+          <h3>Men's #139</h3>
+          <p>March 5–8, 2026</p>
+          <div class="event-action">Register →</div>
+        </div>
+      </a>
+      <a class="event-card fade-up" style="transition-delay: 0.1s" href="#">
+        <div class="event-date">
+          <span class="month">Mar</span>
+          <span class="day">12</span>
+        </div>
+        <div class="event-info">
+          <div class="event-type">English Weekend</div>
+          <h3>Women's #137</h3>
+          <p>March 12–15, 2026</p>
+          <div class="event-action">Register →</div>
+        </div>
+      </a>
+      <a class="event-card fade-up" style="transition-delay: 0.15s" href="#">
+        <div class="event-date">
+          <span class="month">Jun</span>
+          <span class="day">20</span>
+        </div>
+        <div class="event-info">
+          <div class="event-type">Special Event</div>
+          <h3>Day of Reflection</h3>
+          <p>June 20, 2026 · 9:00 AM – 3:00 PM<br>Christ the King Catholic Church</p>
+          <div class="event-action">Learn more →</div>
+        </div>
+      </a>
+      <a class="event-card fade-up" style="transition-delay: 0.2s" href="#">
+        <div class="event-date">
+          <span class="month">Sep</span>
+          <span class="day">—</span>
+        </div>
+        <div class="event-info">
+          <div class="event-type">Spanish Weekend</div>
+          <h3>Men's & Women's</h3>
+          <p>September 2026 · Dates TBA</p>
+          <div class="event-action">Stay updated →</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- WELCOME / MISSION -->
+<section class="welcome-section">
+  <div class="section-inner">
+    <div class="welcome-grid">
+      <div class="fade-up">
+        <div class="section-label">Welcome</div>
+        <h2 class="section-title">Changing lives since 1974</h2>
+        <p class="welcome-text">The Catholic Cursillo Movement in the Diocese of St. Augustine has been transforming lives for over fifty years. Whether you've attended a weekend or are just learning about Cursillo for the first time, you're welcome here.</p>
+        <p class="welcome-text">This site is how we keep in touch with all who have attended the three-day weekend and want to stay connected. Come back often to find upcoming events, download resources, and see what's happening in the community.</p>
+      </div>
+      <div class="fade-up" style="transition-delay: 0.15s">
+        <div class="mission-box">
+          <h3>Our Mission</h3>
+          <p>Each individual lay person must stand before the world as a witness to the resurrection and life of the Lord Jesus — and as a sign that God lives. The laity must nourish the world with spiritual fruits, and joyfully spread that spirit to encourage, support, and affirm those the Lord calls "blessed."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="cta">
+  <div class="cta-content fade-up">
+    <h2>Ready to Begin Your Journey?</h2>
+    <p>Whether you're considering your first Cursillo weekend or looking to stay connected with fellow cursillistas, we welcome you.</p>
+    <div>
+      <a href="#" class="btn-white">Apply for a Weekend</a>
+      <a href="#" class="btn-outline-white">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo-row">
+          <svg width="32" height="41" viewBox="0 0 100 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M68 27 A42 42 0 1 0 68 97" stroke="#C9A84C" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.5"/>
+            <path d="M50 2 L47 44 L47 50 L47 60 L47 66 L47 112 L50 126 L53 112 L53 66 L53 60 L53 50 L53 44 Z" fill="white" opacity="0.7"/>
+            <path d="M2 52 L47 48 L47 56 L2 52 Z" fill="white" opacity="0.7"/>
+            <path d="M98 52 L53 48 L53 56 L98 52 Z" fill="white" opacity="0.7"/>
+          </svg>
+          <div>
+            <div class="footer-name">St. Augustine Cursillo</div>
+            <div class="footer-loc">Jacksonville, Florida</div>
+          </div>
+        </div>
+        <div class="de-colores">De Colores!</div>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="#">Cursillo Events</a></li>
+          <li><a href="#">Newsletters</a></li>
+          <li><a href="#">Documents</a></li>
+          <li><a href="#">Secretariat</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="#">Diocese of St. Augustine, FL</a></li>
+          <li><a href="mailto:info@staugustinecursillo.org">info@staugustinecursillo.org</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Cursillo Movement — Diocese of St. Augustine</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 10);
+  });
+
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
