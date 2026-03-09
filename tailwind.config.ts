@@ -57,6 +57,15 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Cursillo "De Colores" rainbow accent colors
+        rainbow: {
+          red: "hsl(0, 70%, 55%)",
+          orange: "hsl(25, 85%, 55%)",
+          yellow: "hsl(45, 90%, 55%)",
+          green: "hsl(140, 50%, 42%)",
+          blue: "hsl(210, 60%, 50%)",
+          purple: "hsl(270, 50%, 55%)",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

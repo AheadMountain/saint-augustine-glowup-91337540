@@ -15,12 +15,12 @@ const documents = [
 const Documents = () => {
   return (
     <Layout>
-      <section className="py-12 bg-muted/40">
+      <section className="py-10 bg-secondary text-secondary-foreground">
         <div className="container">
-          <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2" style={{ fontFamily: 'system-ui, sans-serif' }}>
+          <h1 className="text-3xl md:text-4xl font-bold mb-1" style={{ fontFamily: 'system-ui, sans-serif' }}>
             Documents
           </h1>
-          <p className="text-muted-foreground">
+          <p className="opacity-80">
             Applications, guides, and resources for the Cursillo community
           </p>
         </div>
@@ -32,16 +32,16 @@ const Documents = () => {
             {documents.map((doc) => (
               <div
                 key={doc.title}
-                className={`rounded-2xl border bg-card p-4 flex items-center gap-4 cursor-pointer hover:border-primary/30 transition-colors group ${doc.featured ? 'ring-1 ring-primary/20 border-primary/20' : ''}`}
+                className={`bg-card border rounded-lg p-4 flex items-center gap-4 cursor-pointer hover:shadow-sm transition-shadow group ${doc.featured ? 'border-l-4 border-l-secondary ring-1 ring-secondary/10' : ''}`}
               >
-                <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl transition-colors ${doc.featured ? 'bg-primary/15' : 'bg-primary/10 group-hover:bg-primary/15'}`}>
-                  <doc.icon className="h-5 w-5 text-primary" />
+                <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg ${doc.featured ? 'bg-secondary/10' : 'bg-accent'}`}>
+                  <doc.icon className={`h-5 w-5 ${doc.featured ? 'text-secondary' : 'text-primary'}`} />
                 </div>
                 <div className="flex-1 min-w-0">
                   <h3 className="font-semibold text-foreground text-sm" style={{ fontFamily: 'system-ui, sans-serif' }}>
                     {doc.title}
                     {doc.featured && (
-                      <span className="ml-2 inline-flex items-center rounded-full bg-primary/10 px-2 py-0.5 text-[10px] text-primary font-semibold uppercase tracking-wider">
+                      <span className="ml-2 inline-flex items-center rounded-full bg-secondary/10 px-2 py-0.5 text-[10px] text-secondary font-bold uppercase tracking-wider">
                         Featured
                       </span>
                     )}
