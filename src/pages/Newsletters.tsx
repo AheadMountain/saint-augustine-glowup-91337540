@@ -1,5 +1,4 @@
 import Layout from "@/components/Layout";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FileText, Calendar } from "lucide-react";
 
 const newsletters = [
@@ -16,35 +15,35 @@ const newsletters = [
 const Newsletters = () => {
   return (
     <Layout>
-      <section className="bg-secondary py-16">
-        <div className="container text-center">
-          <h1 className="text-4xl font-bold text-secondary-foreground mb-3" style={{ fontFamily: 'system-ui, sans-serif' }}>
+      <section className="py-12 bg-muted/40">
+        <div className="container">
+          <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2" style={{ fontFamily: 'system-ui, sans-serif' }}>
             Newsletters
           </h1>
-          <p className="text-secondary-foreground/70 text-lg">
+          <p className="text-muted-foreground">
             Stay informed with the latest updates from the Cursillo community
           </p>
         </div>
       </section>
 
-      <section className="py-16">
-        <div className="container max-w-4xl">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <section className="py-12">
+        <div className="container max-w-3xl">
+          <div className="space-y-3">
             {newsletters.map((nl) => (
-              <Card key={nl.title} className="shadow-sm hover:shadow-md transition-shadow cursor-pointer group">
-                <CardHeader className="text-center">
-                  <div className="mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-accent group-hover:bg-primary/20 transition-colors">
-                    <FileText className="h-6 w-6 text-primary" />
-                  </div>
-                  <CardTitle className="text-base" style={{ fontFamily: 'system-ui, sans-serif' }}>{nl.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <div className="flex items-center justify-center gap-1 text-sm text-muted-foreground">
-                    <Calendar className="h-3.5 w-3.5" />
+              <div key={nl.title} className="rounded-2xl border bg-card p-5 flex items-center gap-4 cursor-pointer hover:border-primary/30 transition-colors group">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 group-hover:bg-primary/15 transition-colors">
+                  <FileText className="h-5 w-5 text-primary" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h3 className="font-semibold text-foreground text-sm" style={{ fontFamily: 'system-ui, sans-serif' }}>
+                    {nl.title}
+                  </h3>
+                  <div className="flex items-center gap-1.5 text-xs text-muted-foreground mt-0.5">
+                    <Calendar className="h-3 w-3" />
                     <span>{nl.date}</span>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             ))}
           </div>
         </div>
