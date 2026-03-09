@@ -144,14 +144,14 @@ const Events = () => {
               <div className="rounded-lg bg-primary p-5 text-primary-foreground">
                 <h4 className="text-lg font-bold mb-0.5" style={{ fontFamily: 'system-ui, sans-serif' }}>Men's #139</h4>
                 <p className="text-sm opacity-80 italic">March 5–8, 2026</p>
-                <Button asChild variant="outline" size="sm" className="mt-3 rounded-md border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
+                <Button asChild size="sm" className="mt-3 rounded-md bg-background text-foreground font-semibold hover:bg-background/90">
                   <Link to="/documents">REGISTER <ArrowRight className="ml-1 h-3 w-3" /></Link>
                 </Button>
               </div>
               <div className="rounded-lg bg-secondary p-5 text-secondary-foreground">
                 <h4 className="text-lg font-bold mb-0.5" style={{ fontFamily: 'system-ui, sans-serif' }}>Women's #137</h4>
                 <p className="text-sm opacity-80 italic">March 12–15, 2026</p>
-                <Button asChild variant="outline" size="sm" className="mt-3 rounded-md border-secondary-foreground/30 text-secondary-foreground hover:bg-secondary-foreground/10">
+                <Button asChild size="sm" className="mt-3 rounded-md bg-background text-foreground font-semibold hover:bg-background/90">
                   <Link to="/documents">REGISTER <ArrowRight className="ml-1 h-3 w-3" /></Link>
                 </Button>
               </div>
