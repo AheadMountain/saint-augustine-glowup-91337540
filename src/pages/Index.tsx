@@ -122,7 +122,7 @@ const Index = () => {
               <p className="text-sm font-semibold uppercase tracking-wider opacity-80 mb-2" style={{ fontFamily: 'system-ui, sans-serif' }}>English Weekend</p>
               <h3 className="text-xl font-bold mb-1" style={{ fontFamily: 'system-ui, sans-serif' }}>Men's #139</h3>
               <p className="text-sm opacity-80 italic mb-4">March 5–8, 2026</p>
-              <Button asChild variant="outline" size="sm" className="rounded-md border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
+              <Button asChild size="sm" className="rounded-md bg-background text-foreground hover:bg-background/90 font-semibold">
                 <Link to="/documents">
                   Apply Now
                   <ArrowRight className="ml-1 h-3.5 w-3.5" />
@@ -133,7 +133,7 @@ const Index = () => {
               <p className="text-sm font-semibold uppercase tracking-wider opacity-80 mb-2" style={{ fontFamily: 'system-ui, sans-serif' }}>English Weekend</p>
               <h3 className="text-xl font-bold mb-1" style={{ fontFamily: 'system-ui, sans-serif' }}>Women's #137</h3>
               <p className="text-sm opacity-80 italic mb-4">March 12–15, 2026</p>
-              <Button asChild variant="outline" size="sm" className="rounded-md border-secondary-foreground/30 text-secondary-foreground hover:bg-secondary-foreground/10">
+              <Button asChild size="sm" className="rounded-md bg-background text-foreground hover:bg-background/90 font-semibold">
                 <Link to="/documents">
                   Apply Now
                   <ArrowRight className="ml-1 h-3.5 w-3.5" />
