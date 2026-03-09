@@ -7,12 +7,16 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: "1.5rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": "1100px",
       },
     },
     extend: {
+      fontFamily: {
+        serif: ["'Crimson Pro'", "Georgia", "serif"],
+        sans: ["'DM Sans'", "system-ui", "sans-serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -57,14 +61,22 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // Cursillo "De Colores" rainbow accent colors
-        rainbow: {
-          red: "hsl(0, 70%, 55%)",
-          orange: "hsl(25, 85%, 55%)",
-          yellow: "hsl(45, 90%, 55%)",
-          green: "hsl(140, 50%, 42%)",
-          blue: "hsl(210, 60%, 50%)",
-          purple: "hsl(270, 50%, 55%)",
+        charcoal: "hsl(var(--charcoal))",
+        cream: "hsl(var(--cream))",
+        "warm-white": "hsl(var(--warm-white))",
+        gold: "hsl(var(--gold))",
+        forest: "hsl(var(--forest))",
+        brown: "hsl(var(--brown))",
+        "light-tan": "hsl(var(--light-tan))",
+        "text-light": "hsl(var(--text-light))",
+        // De Colores rainbow
+        dc: {
+          red: "hsl(4, 65%, 48%)",
+          orange: "hsl(28, 80%, 52%)",
+          yellow: "hsl(46, 88%, 50%)",
+          green: "hsl(145, 63%, 42%)",
+          blue: "hsl(204, 60%, 44%)",
+          purple: "hsl(282, 44%, 47%)",
         },
       },
       borderRadius: {
@@ -81,15 +93,15 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        "fade-in": {
-          from: { opacity: "0", transform: "translateY(10px)" },
+        "fade-up": {
+          from: { opacity: "0", transform: "translateY(28px)" },
           to: { opacity: "1", transform: "translateY(0)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "fade-in": "fade-in 0.5s ease-out forwards",
+        "fade-up": "fade-up 0.7s ease forwards",
       },
     },
   },

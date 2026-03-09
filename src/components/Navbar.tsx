@@ -1,16 +1,13 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import cursilloLogo from "@/assets/cursillo-logo.jpg";
+import RainbowStrip from "./RainbowStrip";
 
 const navLinks = [
   { to: "/", label: "Home" },
-  { to: "/events", label: "Cursillo Events" },
+  { to: "/events", label: "Events" },
   { to: "/newsletters", label: "Newsletters" },
-  { to: "/media", label: "Media" },
   { to: "/documents", label: "Documents" },
   { to: "/secretariat", label: "Secretariat" },
 ];
@@ -20,81 +17,95 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-background border-b">
-      <div className="container flex h-16 items-center justify-between">
-        <Link to="/" className="flex items-center gap-3">
-          <img src={cursilloLogo} alt="Cursillo Logo" className="h-10 w-auto rounded" />
-          <div className="hidden sm:flex flex-col">
-            <span className="text-sm font-bold leading-tight text-foreground" style={{ fontFamily: 'system-ui, sans-serif' }}>
-              Cursillos in Christianity
-            </span>
-            <span className="text-xs text-secondary font-semibold italic">Diocese of St. Augustine</span>
-          </div>
-        </Link>
+    <>
+      {/* Fixed rainbow strip */}
+      <RainbowStrip className="fixed top-0 left-0 right-0 z-[200]" />
 
-        {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-1">
-          {navLinks.map((link) => (
+      {/* Nav */}
+      <header className="fixed top-[5px] left-0 right-0 z-[100] bg-background/95 backdrop-blur-md border-b">
+        <div className="container flex h-[68px] items-center justify-between">
+          <Link to="/" className="flex items-center gap-3 no-underline">
+            {/* Cross SVG logo mark */}
+            <svg width="32" height="42" viewBox="0 0 32 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="12" y="0" width="8" height="42" rx="1" fill="hsl(348, 70%, 33%)" />
+              <rect x="0" y="10" width="32" height="8" rx="1" fill="hsl(348, 70%, 33%)" />
+              <rect x="13" y="1" width="6" height="40" rx="0.5" fill="hsl(43, 50%, 54%)" opacity="0.3" />
+            </svg>
+            <div>
+              <span className="text-lg font-semibold font-serif text-foreground leading-tight block">
+                Cursillo
+              </span>
+              <span className="text-xs text-muted-foreground font-sans">
+                Diocese of St. Augustine
+              </span>
+            </div>
+          </Link>
+
+          {/* Desktop Nav */}
+          <nav className="hidden lg:flex items-center gap-7">
+            {navLinks.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                className={cn(
+                  "text-sm font-medium font-sans transition-colors",
+                  location.pathname === link.to
+                    ? "text-primary"
+                    : "text-muted-foreground hover:text-primary"
+                )}
+              >
+                {link.label}
+              </Link>
+            ))}
             <Link
-              key={link.to}
-              to={link.to}
-              className={cn(
-                "px-3 py-2 text-sm transition-colors",
-                location.pathname === link.to
-                  ? "text-primary font-semibold border-b-2 border-primary"
-                  : "text-muted-foreground hover:text-foreground"
-              )}
-              style={{ fontFamily: 'system-ui, sans-serif' }}
+              to="/documents"
+              className="bg-primary text-primary-foreground px-5 py-2.5 rounded-md text-sm font-semibold font-sans hover:bg-primary/90 transition-colors"
             >
-              {link.label}
+              Apply Now
             </Link>
-          ))}
-        </nav>
+          </nav>
 
-        {/* Mobile Nav */}
-        <Sheet open={open} onOpenChange={setOpen}>
-          <SheetTrigger asChild className="lg:hidden">
-            <Button variant="ghost" size="icon">
-              <Menu className="h-5 w-5" />
-              <span className="sr-only">Menu</span>
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="right" className="w-72 bg-background">
-            <SheetTitle className="flex items-center gap-3 mb-6">
-              <img src={cursilloLogo} alt="Cursillo" className="h-9 w-auto rounded" />
-              <span style={{ fontFamily: 'system-ui, sans-serif' }} className="text-sm font-bold">Cursillo</span>
-            </SheetTitle>
-            <nav className="flex flex-col gap-1">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.to}
-                  to={link.to}
-                  onClick={() => setOpen(false)}
-                  className={cn(
-                    "px-3 py-2.5 rounded-md text-sm transition-colors",
-                    location.pathname === link.to
-                      ? "bg-primary/10 text-primary font-semibold"
-                      : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                  )}
-                  style={{ fontFamily: 'system-ui, sans-serif' }}
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
-          </SheetContent>
-        </Sheet>
-      </div>
-      {/* Rainbow stripe */}
-      <div className="h-1 flex">
-        <div className="flex-1 bg-rainbow-red" />
-        <div className="flex-1 bg-rainbow-orange" />
-        <div className="flex-1 bg-rainbow-yellow" />
-        <div className="flex-1 bg-rainbow-green" />
-        <div className="flex-1 bg-rainbow-blue" />
-        <div className="flex-1 bg-rainbow-purple" />
-      </div>
-    </header>
+          {/* Mobile hamburger */}
+          <button
+            className="lg:hidden p-2"
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle menu"
+          >
+            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
+      </header>
+
+      {/* Mobile menu */}
+      {open && (
+        <div className="fixed top-[73px] inset-x-0 bottom-0 bg-background z-[99] p-6 lg:hidden overflow-y-auto">
+          <nav className="flex flex-col gap-1">
+            {navLinks.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                onClick={() => setOpen(false)}
+                className={cn(
+                  "py-3.5 px-0 text-lg font-medium font-sans border-b border-border transition-colors",
+                  location.pathname === link.to
+                    ? "text-primary"
+                    : "text-foreground"
+                )}
+              >
+                {link.label}
+              </Link>
+            ))}
+            <Link
+              to="/documents"
+              onClick={() => setOpen(false)}
+              className="mt-6 bg-primary text-primary-foreground py-3.5 rounded-lg text-center text-base font-semibold font-sans"
+            >
+              Apply for a Weekend
+            </Link>
+          </nav>
+        </div>
+      )}
+    </>
   );
 };
 
