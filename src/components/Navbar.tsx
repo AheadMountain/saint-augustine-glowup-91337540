@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -14,7 +14,20 @@ const navLinks = [
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setOpen(false);
+  }, [location.pathname]);
+
+  // Scroll shadow
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
@@ -22,7 +35,12 @@ const Navbar = () => {
       <RainbowStrip className="fixed top-0 left-0 right-0 z-[200]" />
 
       {/* Nav */}
-      <header className="fixed top-[5px] left-0 right-0 z-[100] bg-background/95 backdrop-blur-md border-b">
+      <header
+        className={cn(
+          "fixed top-[5px] left-0 right-0 z-[100] bg-background/95 backdrop-blur-md border-b transition-shadow duration-300",
+          scrolled && "shadow-[0_2px_20px_rgba(0,0,0,0.06)]"
+        )}
+      >
         <div className="container flex h-[68px] items-center justify-between">
           <Link to="/" className="flex items-center gap-3 no-underline">
             {/* Cross SVG logo mark */}
@@ -48,7 +66,7 @@ const Navbar = () => {
                 key={link.to}
                 to={link.to}
                 className={cn(
-                  "text-sm font-medium font-sans transition-colors",
+                  "text-sm font-medium font-sans transition-colors link-underline",
                   location.pathname === link.to
                     ? "text-primary"
                     : "text-muted-foreground hover:text-primary"
@@ -59,7 +77,7 @@ const Navbar = () => {
             ))}
             <Link
               to="/documents"
-              className="bg-primary text-primary-foreground px-5 py-2.5 rounded-md text-sm font-semibold font-sans hover:bg-primary/90 transition-colors"
+              className="bg-primary text-primary-foreground px-5 py-2.5 rounded-md text-sm font-semibold font-sans hover:bg-primary/90 hover:-translate-y-0.5 transition-all duration-200"
             >
               Apply Now
             </Link>
@@ -78,7 +96,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {open && (
-        <div className="fixed top-[73px] inset-x-0 bottom-0 bg-background z-[99] p-6 lg:hidden overflow-y-auto">
+        <div className="fixed top-[73px] inset-x-0 bottom-0 bg-background z-[99] p-6 lg:hidden overflow-y-auto animate-fade-in">
           <nav className="flex flex-col gap-1">
             {navLinks.map((link) => (
               <Link
