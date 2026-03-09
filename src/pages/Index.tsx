@@ -1,6 +1,5 @@
 import Layout from "@/components/Layout";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const Index = () => {
@@ -9,109 +8,106 @@ const Index = () => {
   return (
     <Layout>
       {/* ═══════════════════════════════════════════
-          HERO BANNER — Dark, editorial, Apple-feel
+          HERO BANNER
          ═══════════════════════════════════════════ */}
       <section
-        className="relative overflow-hidden py-[72px] px-6 md:py-24 lg:py-28"
-        style={{ background: "hsl(18, 8%, 16%)" }}
+        className="relative overflow-hidden"
+        style={{
+          background: "hsl(var(--charcoal))",
+          padding: "72px 24px 80px",
+        }}
       >
         {/* Radial ambient glow */}
         <div
-          className="absolute top-[-40%] left-1/2 -translate-x-1/2 w-[800px] h-[600px] rounded-full pointer-events-none"
+          className="absolute pointer-events-none"
           style={{
-            background: "radial-gradient(ellipse, hsla(43,50%,54%,0.1) 0%, hsla(348,70%,33%,0.06) 40%, transparent 70%)",
+            top: "-40%",
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: 800,
+            height: 600,
+            borderRadius: "50%",
+            background: "radial-gradient(ellipse, rgba(201,168,76,0.1) 0%, rgba(139,26,43,0.06) 40%, transparent 70%)",
           }}
         />
         {/* Bottom conic rainbow ring */}
         <div
-          className="absolute bottom-[-200px] left-1/2 -translate-x-1/2 w-[900px] h-[400px] rounded-full pointer-events-none opacity-70"
+          className="absolute pointer-events-none"
           style={{
+            bottom: -200,
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: 900,
+            height: 400,
+            borderRadius: "50%",
             border: "3px solid transparent",
+            opacity: 0.7,
             background: `
-              linear-gradient(hsl(18,8%,16%), hsl(18,8%,16%)) padding-box,
+              linear-gradient(hsl(var(--charcoal)), hsl(var(--charcoal))) padding-box,
               conic-gradient(from 200deg,
-                hsla(4,65%,48%,0.15),
-                hsla(28,80%,52%,0.12),
-                hsla(46,88%,50%,0.12),
-                hsla(145,63%,42%,0.1),
-                hsla(204,60%,44%,0.1),
-                hsla(282,44%,47%,0.08),
+                rgba(192,57,43,0.15),
+                rgba(230,126,34,0.12),
+                rgba(241,196,15,0.12),
+                rgba(39,174,96,0.1),
+                rgba(41,128,185,0.1),
+                rgba(142,68,173,0.08),
                 transparent 60%
               ) border-box
             `,
           }}
         />
 
-        <div className="relative z-10 container grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* ── Left column ── */}
+        <div className="relative z-10 container grid grid-cols-1 lg:grid-cols-2 gap-[60px] items-center">
+          {/* Left column */}
           <div className="flex flex-col items-start">
-            {/* Logo mark with entrance animation */}
-            <svg
-              width="64" height="82" viewBox="0 0 32 42" fill="none"
-              className="mb-7 animate-fade-up"
-              style={{ animationDelay: "0.1s", animationFillMode: "backwards" }}
-            >
-              <rect x="12" y="0" width="8" height="42" rx="1" fill="hsl(348, 70%, 33%)" />
-              <rect x="0" y="10" width="32" height="8" rx="1" fill="hsl(348, 70%, 33%)" />
-              <rect x="13" y="1" width="6" height="40" rx="0.5" fill="hsl(43, 50%, 54%)" opacity="0.3" />
-            </svg>
+            {/* Logo mark */}
+            <div className="mb-7">
+              <svg width="64" height="82" viewBox="0 0 32 42" fill="none">
+                <rect x="12" y="0" width="8" height="42" rx="1" fill="hsl(var(--primary))" />
+                <rect x="0" y="10" width="32" height="8" rx="1" fill="hsl(var(--primary))" />
+                <rect x="13" y="1" width="6" height="40" rx="0.5" fill="hsl(var(--secondary))" opacity="0.3" />
+              </svg>
+            </div>
 
-            <h1
-              className="text-4xl md:text-5xl lg:text-[3.4rem] font-bold text-white leading-[1.1] mb-1.5 tracking-tight font-serif animate-fade-up"
-              style={{ animationDelay: "0.2s", animationFillMode: "backwards" }}
-            >
+            <h1 className="font-serif text-[2rem] sm:text-[2.6rem] lg:text-[3.4rem] font-bold text-white leading-[1.1] mb-1.5 tracking-tight">
               Cursillos in{" "}
-              <em className="not-italic text-gold">Christianity</em>
+              <em className="not-italic font-normal text-gold">Christianity</em>
             </h1>
 
-            <p
-              className="text-white/55 text-base font-medium font-sans mb-1.5 animate-fade-up"
-              style={{ animationDelay: "0.3s", animationFillMode: "backwards" }}
-            >
+            <p className="text-[0.95rem] text-white/55 font-medium font-sans mb-1.5">
               Diocese of St. Augustine — Jacksonville, Florida
             </p>
 
-            <p
-              className="font-serif italic text-2xl font-medium mb-7 text-rainbow-gradient animate-fade-up"
-              style={{ animationDelay: "0.4s", animationFillMode: "backwards" }}
-            >
+            <p className="font-serif italic text-[1.5rem] sm:text-[1.2rem] md:text-[1.5rem] font-medium mb-7 text-rainbow-gradient">
               De Colores!
             </p>
 
-            <p
-              className="text-white/65 text-base md:text-lg max-w-[460px] mb-9 leading-relaxed font-sans animate-fade-up"
-              style={{ animationDelay: "0.5s", animationFillMode: "backwards" }}
-            >
+            <p className="text-[1.05rem] text-white/65 max-w-[460px] mb-9 leading-[1.75] font-sans">
               Changing lives through three-day weekends of faith, community, and friendship since 1974.
             </p>
 
-            <div
-              className="flex flex-wrap gap-3.5 animate-fade-up"
-              style={{ animationDelay: "0.6s", animationFillMode: "backwards" }}
-            >
+            <div className="flex flex-wrap gap-3.5">
               <Link
                 to="/events"
-                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-7 py-3.5 rounded-lg text-[0.95rem] font-semibold font-sans hover:brightness-110 hover:-translate-y-0.5 transition-all duration-300"
+                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-7 py-3.5 rounded-lg text-[0.95rem] font-semibold font-sans hover:brightness-110 hover:-translate-y-px transition-all duration-250"
               >
                 View Upcoming Events
               </Link>
               <Link
                 to="/documents"
-                className="inline-flex items-center gap-2 text-white/85 px-7 py-3.5 rounded-lg text-[0.95rem] font-semibold font-sans border border-white/20 hover:border-white/50 hover:text-white hover:-translate-y-0.5 transition-all duration-300"
+                className="inline-flex items-center gap-2 text-white/85 px-7 py-3.5 rounded-lg text-[0.95rem] font-semibold font-sans border-[1.5px] border-white/20 hover:border-white/50 hover:text-white transition-all duration-250"
               >
                 Apply for a Weekend
               </Link>
             </div>
           </div>
 
-          {/* ── Right column — Quote card ── */}
-          <div
-            className="relative animate-fade-up"
-            style={{ animationDelay: "0.5s", animationFillMode: "backwards" }}
-          >
+          {/* Right column — Quote card */}
+          <div className="relative">
             <div
-              className="relative rounded-2xl p-10 md:p-11 backdrop-blur-sm overflow-hidden"
+              className="relative rounded-2xl backdrop-blur-sm overflow-hidden"
               style={{
+                padding: "44px 36px",
                 background: "rgba(255,255,255,0.04)",
                 border: "1px solid rgba(255,255,255,0.08)",
               }}
@@ -128,24 +124,24 @@ const Index = () => {
                 <rect x="12" y="0" width="8" height="42" rx="1" fill="white" />
                 <rect x="0" y="10" width="32" height="8" rx="1" fill="white" />
               </svg>
-              <blockquote className="font-serif text-2xl md:text-[1.45rem] italic text-white/90 leading-snug mb-4 font-normal">
+              <blockquote className="font-serif text-[1.2rem] sm:text-[1.45rem] italic text-white/90 leading-[1.5] mb-4 font-normal">
                 "Make a friend, be a friend, bring a friend to Christ."
               </blockquote>
-              <cite className="not-italic text-sm text-white/40 font-sans tracking-wide">
+              <cite className="not-italic text-[0.82rem] text-white/40 font-sans tracking-wide">
                 — The Cursillo motto
               </cite>
 
-              <div className="flex gap-8 mt-8 pt-6 border-t border-white/[0.08]">
+              <div className="flex gap-8 mt-8 pt-6" style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}>
                 {[
                   { num: "50+", label: "Years" },
                   { num: "139", label: "Weekends" },
                   { num: "1974", label: "Founded" },
                 ].map((stat) => (
-                  <div key={stat.label} className="stat-highlight">
-                    <div className="font-serif text-3xl font-semibold text-gold leading-none">
+                  <div key={stat.label}>
+                    <div className="font-serif text-[1.8rem] font-semibold text-gold leading-none">
                       {stat.num}
                     </div>
-                    <div className="text-xs text-white/40 mt-1 uppercase tracking-widest font-sans">
+                    <div className="text-[0.75rem] text-white/40 mt-1 uppercase tracking-[0.06em] font-sans">
                       {stat.label}
                     </div>
                   </div>
@@ -159,16 +155,16 @@ const Index = () => {
       {/* ═══════════════════════════════════════════
           WHAT IS CURSILLO — Three pillars
          ═══════════════════════════════════════════ */}
-      <section className="py-20 md:py-28 bg-cream">
+      <section className="py-20 px-6 bg-cream">
         <div className="container">
           <div ref={reveal} className="fade-up">
-            <p className="text-xs uppercase tracking-[0.12em] text-primary font-semibold mb-3 font-sans">
+            <p className="text-[0.75rem] uppercase tracking-[0.12em] text-primary font-semibold mb-3 font-sans">
               What is Cursillo?
             </p>
-            <h2 className="text-3xl md:text-[2.6rem] font-semibold text-foreground mb-4 font-serif leading-tight">
+            <h2 className="font-serif text-[1.7rem] sm:text-[2.2rem] font-semibold text-charcoal mb-4 leading-tight">
               Three pillars of the movement
             </h2>
-            <p className="text-base text-muted-foreground max-w-xl leading-relaxed mb-14 font-sans">
+            <p className="text-base text-muted-foreground max-w-[520px] leading-[1.7] mb-12 font-sans">
               Cursillo is a movement within the Catholic Church that helps people deepen their faith through community, study, and action.
             </p>
           </div>
@@ -179,37 +175,38 @@ const Index = () => {
                 num: "01",
                 title: "The Weekend",
                 desc: "A three-day experience of living in Christian community — filled with talks, discussions, worship, and lasting friendships.",
-                borderColor: "hsl(4, 65%, 48%)",
+                color: "hsl(4, 65%, 48%)",
               },
               {
                 num: "02",
                 title: "Group Reunion",
                 desc: "Small groups that meet regularly to share their journey, support one another, and stay accountable in faith.",
-                borderColor: "hsl(145, 63%, 42%)",
+                color: "hsl(145, 63%, 42%)",
               },
               {
                 num: "03",
                 title: "Ultreya",
                 desc: "Larger gatherings where cursillistas come together to share, encourage, and celebrate what God is doing in their lives.",
-                borderColor: "hsl(204, 60%, 44%)",
+                color: "hsl(204, 60%, 44%)",
               },
             ].map((item, i) => (
               <div
                 key={item.num}
                 ref={reveal}
-                className={`fade-up stagger-${i + 1} relative bg-card rounded-xl border p-9 hover-lift overflow-hidden`}
+                className={`fade-up stagger-${i + 1} relative bg-card rounded-xl border border-border/40 overflow-hidden hover-lift`}
+                style={{ padding: "36px 28px" }}
               >
                 <div
                   className="absolute top-0 left-0 w-1 h-full"
-                  style={{ background: item.borderColor }}
+                  style={{ background: item.color }}
                 />
-                <div className="font-serif text-[2.8rem] font-light text-gold leading-none mb-5">
+                <div className="font-serif text-[2.5rem] font-light text-gold leading-none mb-4">
                   {item.num}
                 </div>
-                <h3 className="font-serif text-xl font-semibold text-foreground mb-3">
+                <h3 className="font-serif text-[1.35rem] font-semibold text-charcoal mb-2.5">
                   {item.title}
                 </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed font-sans">
+                <p className="text-[0.92rem] text-muted-foreground leading-[1.7] font-sans">
                   {item.desc}
                 </p>
               </div>
@@ -219,18 +216,18 @@ const Index = () => {
       </section>
 
       {/* ═══════════════════════════════════════════
-          UPCOMING EVENTS — Card grid
+          UPCOMING EVENTS
          ═══════════════════════════════════════════ */}
-      <section className="py-20 md:py-28">
+      <section className="py-20 px-6">
         <div className="container">
           <div ref={reveal} className="fade-up">
-            <p className="text-xs uppercase tracking-[0.12em] text-primary font-semibold mb-3 font-sans">
+            <p className="text-[0.75rem] uppercase tracking-[0.12em] text-primary font-semibold mb-3 font-sans">
               Upcoming
             </p>
-            <h2 className="text-3xl md:text-[2.6rem] font-semibold text-foreground mb-4 font-serif leading-tight">
-              Cursillo Weekends & Events
+            <h2 className="font-serif text-[1.7rem] sm:text-[2.2rem] font-semibold text-charcoal mb-4 leading-tight">
+              Cursillo Weekends &amp; Events
             </h2>
-            <p className="text-base text-muted-foreground max-w-xl leading-relaxed mb-14 font-sans">
+            <p className="text-base text-muted-foreground max-w-[520px] leading-[1.7] mb-12 font-sans">
               Find the next weekend retreat or gathering near you. Space is limited — register early.
             </p>
           </div>
@@ -246,27 +243,28 @@ const Index = () => {
                 key={event.title}
                 to={event.to}
                 ref={reveal}
-                className={`fade-up stagger-${i + 1} flex gap-5 p-7 bg-card border border-border rounded-xl no-underline text-foreground hover:border-primary hover:shadow-lg hover:-translate-y-1 transition-all duration-300`}
+                className={`fade-up stagger-${i + 1} flex gap-5 no-underline text-foreground border border-light-tan rounded-xl hover:border-primary hover:shadow-lg transition-all duration-250`}
+                style={{ padding: 28, background: "hsl(var(--warm-white))" }}
               >
-                <div className="flex flex-col items-center justify-center min-w-[60px] bg-cream rounded-xl py-3 px-2">
-                  <span className="text-[0.7rem] uppercase tracking-widest text-primary font-semibold font-sans">
+                <div className="flex flex-col items-center justify-center min-w-[60px] bg-cream rounded-[10px] py-3 px-2">
+                  <span className="text-[0.7rem] uppercase tracking-[0.08em] text-primary font-semibold font-sans">
                     {event.month}
                   </span>
-                  <span className="font-serif text-3xl font-semibold text-foreground leading-tight">
+                  <span className="font-serif text-[1.8rem] font-semibold text-charcoal leading-[1.1]">
                     {event.day}
                   </span>
                 </div>
                 <div className="flex-1">
-                  <span className="text-xs uppercase tracking-widest text-primary font-semibold font-sans">
+                  <span className="text-[0.78rem] uppercase tracking-[0.08em] text-primary font-semibold font-sans block mb-1.5">
                     {event.type}
                   </span>
-                  <h3 className="text-base font-semibold text-foreground mt-1 font-sans">
+                  <h3 className="text-[1.05rem] font-semibold text-charcoal mb-1 font-sans">
                     {event.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground mt-1 whitespace-pre-line font-sans">
+                  <p className="text-[0.88rem] text-muted-foreground whitespace-pre-line font-sans">
                     {event.detail}
                   </p>
-                  <span className="text-sm text-primary font-semibold mt-2 inline-flex items-center gap-1 font-sans">
+                  <span className="text-[0.85rem] text-primary font-semibold mt-2 inline-flex items-center gap-1 font-sans">
                     {event.action}
                   </span>
                 </div>
@@ -279,36 +277,39 @@ const Index = () => {
       {/* ═══════════════════════════════════════════
           WELCOME & MISSION
          ═══════════════════════════════════════════ */}
-      <section className="py-20 md:py-28 bg-cream relative overflow-hidden">
+      <section className="py-20 px-6 bg-cream relative overflow-hidden">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
             {/* Welcome text */}
             <div ref={reveal} className="fade-left">
-              <p className="text-xs uppercase tracking-[0.12em] text-primary font-semibold mb-3 font-sans">
+              <p className="text-[0.75rem] uppercase tracking-[0.12em] text-primary font-semibold mb-3 font-sans">
                 Welcome
               </p>
-              <h2 className="text-3xl md:text-[2.6rem] font-semibold text-foreground mb-6 font-serif leading-tight">
+              <h2 className="font-serif text-[1.7rem] sm:text-[2.2rem] font-semibold text-charcoal mb-4 leading-tight">
                 Changing lives since 1974
               </h2>
-              <p className="text-base text-muted-foreground leading-[1.85] mb-5 font-sans">
+              <p className="text-[1.05rem] text-muted-foreground leading-[1.85] mb-5 font-sans">
                 The Catholic Cursillo Movement in the Diocese of St. Augustine has been transforming lives for over fifty years. Whether you've attended a weekend or are just learning about Cursillo for the first time, you're welcome here.
               </p>
-              <p className="text-base text-muted-foreground leading-[1.85] font-sans">
+              <p className="text-[1.05rem] text-muted-foreground leading-[1.85] font-sans">
                 This site is how we keep in touch with all who have attended the three-day weekend and want to stay connected. Come back often to find upcoming events, download resources, and see what's happening in the community.
               </p>
             </div>
 
             {/* Mission box */}
             <div ref={reveal} className="fade-right">
-              <div className="relative bg-card border rounded-2xl p-10 overflow-hidden">
+              <div
+                className="relative bg-card border border-border/60 rounded-[14px] overflow-hidden"
+                style={{ padding: "40px 32px" }}
+              >
                 {/* Rainbow left bar */}
                 <div
-                  className="absolute top-0 left-0 w-1 h-full rounded-l-2xl"
+                  className="absolute top-0 left-0 w-1 h-full rounded-l-[14px]"
                   style={{
                     background: "linear-gradient(to bottom, hsl(4,65%,48%), hsl(28,80%,52%), hsl(46,88%,50%), hsl(145,63%,42%), hsl(204,60%,44%), hsl(282,44%,47%))",
                   }}
                 />
-                <h3 className="text-2xl font-semibold text-foreground mb-4 font-serif">
+                <h3 className="font-serif text-[1.5rem] font-semibold text-charcoal mb-4">
                   Our Mission
                 </h3>
                 <p className="text-[0.95rem] text-muted-foreground leading-[1.8] font-sans">
@@ -323,33 +324,35 @@ const Index = () => {
       {/* ═══════════════════════════════════════════
           CTA — Crimson with cross pattern
          ═══════════════════════════════════════════ */}
-      <section className="relative py-20 md:py-28 overflow-hidden" style={{ background: "hsl(348, 70%, 33%)" }}>
+      <section
+        className="relative py-20 px-6 overflow-hidden text-center"
+        style={{ background: "hsl(var(--primary))" }}
+      >
         {/* Cross pattern overlay */}
         <div
-          className="absolute inset-0 opacity-[0.03]"
+          className="absolute inset-0"
           style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
           }}
         />
 
-        <div ref={reveal} className="fade-up-scale relative z-10 container max-w-2xl text-center">
-          <h2 className="text-3xl md:text-[2.6rem] font-semibold text-white mb-4 font-serif leading-tight">
+        <div ref={reveal} className="fade-up-scale relative z-10 container max-w-lg mx-auto">
+          <h2 className="font-serif text-[1.8rem] sm:text-[2.4rem] font-semibold text-white mb-3 leading-tight">
             Ready to Begin Your Journey?
           </h2>
-          <p className="text-base md:text-lg text-white/85 mb-10 max-w-md mx-auto leading-relaxed font-sans">
+          <p className="text-[1.05rem] text-white/85 mb-9 max-w-[480px] mx-auto leading-[1.7] font-sans">
             Whether you're considering your first Cursillo weekend or looking to stay connected with fellow cursillistas, we welcome you.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Link
               to="/documents"
-              className="inline-flex items-center gap-2 bg-white text-primary px-8 py-4 rounded-lg text-[0.95rem] font-semibold font-sans hover:-translate-y-1 hover:shadow-2xl transition-all duration-300"
+              className="inline-flex items-center gap-2 bg-white text-primary px-8 py-3.5 rounded-lg text-[0.95rem] font-semibold font-sans hover:-translate-y-0.5 hover:shadow-2xl transition-all duration-250"
             >
               Apply for a Weekend
-              <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
               to="/secretariat"
-              className="inline-flex items-center gap-2 text-white px-8 py-4 rounded-lg text-[0.95rem] font-semibold font-sans border border-white/40 hover:border-white hover:bg-white/10 transition-all duration-300"
+              className="inline-flex items-center gap-2 text-white px-8 py-3.5 rounded-lg text-[0.95rem] font-semibold font-sans border-[1.5px] border-white/40 hover:border-white hover:bg-white/10 transition-all duration-250"
             >
               Contact Us
             </Link>
