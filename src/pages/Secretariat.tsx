@@ -15,21 +15,20 @@ const secretariatMembers = [
 const Secretariat = () => {
   return (
     <Layout>
-      <section className="py-10 bg-primary text-primary-foreground">
+      <section className="py-12" style={{ background: "hsl(18, 8%, 16%)" }}>
         <div className="container">
-          <h1 className="text-3xl md:text-4xl font-bold mb-1" style={{ fontFamily: 'system-ui, sans-serif' }}>
-            Secretariat
-          </h1>
-          <p className="opacity-80">
+          <p className="text-xs uppercase tracking-[0.12em] text-white/40 font-semibold mb-2 font-sans">Leadership</p>
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-2 font-serif">Secretariat</h1>
+          <p className="text-white/55 font-sans">
             Leadership of the Cursillo Movement — Diocese of St. Augustine
           </p>
         </div>
       </section>
 
-      <section className="py-12">
+      <section className="py-14">
         <div className="container max-w-3xl">
-          <p className="text-foreground mb-8 leading-relaxed">
-            The Secretariat is the governing body of the Cursillo Movement in the Diocese of St. Augustine. 
+          <p className="text-base text-muted-foreground mb-8 leading-relaxed font-sans">
+            The Secretariat is the governing body of the Cursillo Movement in the Diocese of St. Augustine.
             Its members volunteer their time and talents to serve the Cursillo community.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -39,24 +38,22 @@ const Secretariat = () => {
                   <div className="flex h-9 w-9 items-center justify-center rounded-full bg-primary/10">
                     <User className="h-4 w-4 text-primary" />
                   </div>
-                  <h3 className="text-sm font-bold text-foreground" style={{ fontFamily: 'system-ui, sans-serif' }}>
-                    {member.role}
-                  </h3>
+                  <h3 className="text-sm font-semibold text-foreground font-sans">{member.role}</h3>
                 </div>
-                <p className="text-xs text-muted-foreground leading-relaxed">{member.description}</p>
+                <p className="text-xs text-muted-foreground leading-relaxed font-sans">{member.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-12 bg-accent">
+      <section className="py-14 bg-cream">
         <div className="container max-w-lg">
-          <h2 className="text-2xl font-bold text-secondary mb-3" style={{ fontFamily: 'system-ui, sans-serif' }}>Get in Touch</h2>
-          <p className="text-muted-foreground text-sm mb-4">
+          <h2 className="text-2xl font-semibold text-foreground mb-3 font-serif">Get in Touch</h2>
+          <p className="text-muted-foreground text-sm mb-4 font-sans">
             For questions about the Cursillo Movement in the Diocese of St. Augustine, please reach out.
           </p>
-          <div className="inline-flex items-center gap-2 text-primary font-semibold text-sm">
+          <div className="inline-flex items-center gap-2 text-primary font-semibold text-sm font-sans">
             <Mail className="h-4 w-4" />
             <a href="mailto:info@staugustinecursillo.org" className="hover:underline">
               info@staugustinecursillo.org
