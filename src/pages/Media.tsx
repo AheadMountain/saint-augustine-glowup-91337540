@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import { Video, Image, Music } from "lucide-react";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const mediaItems = [
   { title: "Cursillo Weekend Highlights", icon: Video, description: "Highlights from recent Cursillo weekends", color: "hsl(4, 65%, 48%)" },
@@ -11,25 +12,31 @@ const mediaItems = [
 ];
 
 const Media = () => {
+  const reveal = useScrollReveal();
+
   return (
     <Layout>
-      <section className="py-12" style={{ background: "hsl(18, 8%, 16%)" }}>
+      <section className="py-12 md:py-16" style={{ background: "hsl(18, 8%, 16%)" }}>
         <div className="container">
-          <p className="text-xs uppercase tracking-[0.12em] text-white/40 font-semibold mb-2 font-sans">Gallery</p>
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-2 font-serif">Media</h1>
-          <p className="text-white/55 font-sans">
+          <p className="text-xs uppercase tracking-[0.12em] text-white/40 font-semibold mb-2 font-sans animate-fade-up" style={{ animationDelay: "0.1s", animationFillMode: "backwards" }}>Gallery</p>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 font-serif animate-fade-up" style={{ animationDelay: "0.2s", animationFillMode: "backwards" }}>Media</h1>
+          <p className="text-white/55 font-sans text-lg animate-fade-up" style={{ animationDelay: "0.3s", animationFillMode: "backwards" }}>
             Videos, photos, and music from the Cursillo community
           </p>
         </div>
       </section>
 
-      <section className="py-14">
+      <section className="py-16 md:py-20">
         <div className="container max-w-4xl">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {mediaItems.map((item) => (
-              <div key={item.title} className="bg-card border rounded-xl p-6 cursor-pointer hover:shadow-md hover:-translate-y-1 transition-all group">
+            {mediaItems.map((item, i) => (
+              <div
+                key={item.title}
+                ref={reveal}
+                className={`fade-up stagger-${i + 1} bg-card border rounded-xl p-6 cursor-pointer hover-lift group`}
+              >
                 <div
-                  className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg"
+                  className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg transition-transform duration-300 group-hover:scale-110"
                   style={{ background: `${item.color}15`, color: item.color }}
                 >
                   <item.icon className="h-6 w-6" />

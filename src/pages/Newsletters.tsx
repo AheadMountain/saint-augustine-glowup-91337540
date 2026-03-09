@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import { FileText, Calendar, Download } from "lucide-react";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const newsletters = [
   { title: "Spring 2025 Newsletter", date: "March 2025" },
@@ -20,26 +21,32 @@ const seasonColors: Record<string, string> = {
 };
 
 const Newsletters = () => {
+  const reveal = useScrollReveal();
+
   return (
     <Layout>
-      <section className="py-12" style={{ background: "hsl(18, 8%, 16%)" }}>
+      <section className="py-12 md:py-16" style={{ background: "hsl(18, 8%, 16%)" }}>
         <div className="container">
-          <p className="text-xs uppercase tracking-[0.12em] text-white/40 font-semibold mb-2 font-sans">Updates</p>
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-2 font-serif">Newsletters</h1>
-          <p className="text-white/55 font-sans">
+          <p className="text-xs uppercase tracking-[0.12em] text-white/40 font-semibold mb-2 font-sans animate-fade-up" style={{ animationDelay: "0.1s", animationFillMode: "backwards" }}>Updates</p>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 font-serif animate-fade-up" style={{ animationDelay: "0.2s", animationFillMode: "backwards" }}>Newsletters</h1>
+          <p className="text-white/55 font-sans text-lg animate-fade-up" style={{ animationDelay: "0.3s", animationFillMode: "backwards" }}>
             Stay informed with the latest updates from the Cursillo community
           </p>
         </div>
       </section>
 
-      <section className="py-14">
+      <section className="py-16 md:py-20">
         <div className="container max-w-3xl">
           <div className="space-y-3">
-            {newsletters.map((nl) => {
+            {newsletters.map((nl, i) => {
               const season = nl.title.split(" ")[0];
               const borderColor = seasonColors[season] || "hsl(348, 70%, 33%)";
               return (
-                <div key={nl.title} className="relative bg-card border rounded-xl p-5 flex items-center gap-4 cursor-pointer hover:shadow-md transition-shadow group overflow-hidden">
+                <div
+                  key={nl.title}
+                  ref={reveal}
+                  className={`fade-up stagger-${Math.min(i + 1, 6)} relative bg-card border rounded-xl p-5 flex items-center gap-4 cursor-pointer hover-lift group overflow-hidden`}
+                >
                   <div className="absolute top-0 left-0 w-1 h-full" style={{ background: borderColor }} />
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent">
                     <FileText className="h-5 w-5 text-muted-foreground" />
