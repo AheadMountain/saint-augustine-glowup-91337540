@@ -69,6 +69,7 @@ const App = () => (
           <Route path="/links" element={<Links />} />
           <Route path="/videos" element={<Videos />} />
           <Route path="/weekend-materials" element={<WeekendMaterials />} />
+          <Route path="/wix-test" element={<WixTest />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
