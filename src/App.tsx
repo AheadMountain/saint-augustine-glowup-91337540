@@ -28,6 +28,7 @@ import InRemembrance from "./pages/InRemembrance";
 import PhotoGallery from "./pages/PhotoGallery";
 import Links from "./pages/Links";
 import Videos from "./pages/Videos";
+import WeekendMaterials from "./pages/WeekendMaterials";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -64,6 +65,7 @@ const App = () => (
           <Route path="/photo-gallery" element={<PhotoGallery />} />
           <Route path="/links" element={<Links />} />
           <Route path="/videos" element={<Videos />} />
+          <Route path="/weekend-materials" element={<WeekendMaterials />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
