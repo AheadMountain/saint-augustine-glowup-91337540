@@ -37,6 +37,7 @@ const EventCard = ({ event, revealRef, className = "" }: { event: typeof english
 );
 
 const Events = () => {
+  usePageTitle("Events & Schedule");
   const reveal = useScrollReveal();
 
   return (

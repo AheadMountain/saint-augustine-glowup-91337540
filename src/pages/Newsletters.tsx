@@ -22,6 +22,7 @@ const seasonColors: Record<string, string> = {
 };
 
 const Newsletters = () => {
+  usePageTitle("Newsletters");
   const reveal = useScrollReveal();
 
   return (

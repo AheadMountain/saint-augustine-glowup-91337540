@@ -1,9 +1,11 @@
 import Layout from "@/components/Layout";
 import { Link } from "react-router-dom";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { usePageTitle } from "@/hooks/use-page-title";
 import CursilloLogo from "@/components/CursilloLogo";
 
 const Index = () => {
+  usePageTitle();
   const reveal = useScrollReveal();
 
   return (

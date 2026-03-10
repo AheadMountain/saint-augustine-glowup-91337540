@@ -13,6 +13,7 @@ const mediaItems = [
 ];
 
 const Media = () => {
+  usePageTitle("Media");
   const reveal = useScrollReveal();
 
   return (
