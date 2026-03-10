@@ -16,14 +16,14 @@ const documents: DocItem[] = [
   {
     title: "English Application",
     description: "Application for Cursillo Weekend (English)",
-    href: "https://www.staugustinecursillo.org/_files/ugd/b77f4d_aabceef924c24e34b052e1e9ef2adea5.pdf",
+    href: "https://drive.google.com/file/d/1luM6ggPg1FmTqZPT9HwycCd9UlHWeYt9/view?usp=sharing",
     isExternal: true,
     category: "application",
   },
   {
     title: "Aplicación Español",
     description: "Aplicación para el fin de semana de Cursillo (Español)",
-    href: "https://www.staugustinecursillo.org/_files/ugd/b77f4d_9dcc6a3c99d041bfa8bad0ed0a2f7eac.pdf",
+    href: "https://drive.google.com/file/d/1fhCmes9eaktxLbw1Zs6cBd-zKsNtZaDa/view?usp=sharing",
     isExternal: true,
     category: "application",
   },
@@ -36,7 +36,7 @@ const documents: DocItem[] = [
   {
     title: "Adoration Sign for Men #134 and Women #132",
     description: "Cursillo Visiting Adorer sign-up sheet",
-    href: "https://www.staugustinecursillo.org/_files/ugd/b77f4d_8bf5ae25f3ae4155b1811694bc6246da.docx?dn=Cursillo%20Visiting%20Adorer.docx",
+    href: "https://docs.google.com/document/d/1fFUAvI0xhh2Ykykmnh29XfMK2kD53_TN/edit?usp=sharing&ouid=112378510783152767028&rtpof=true&sd=true",
     isExternal: true,
     category: "secretariat",
   },
