@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import { Video, Image, Music } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { usePageTitle } from "@/hooks/use-page-title";
 
 const mediaItems = [
   { title: "Cursillo Weekend Highlights", icon: Video, description: "Highlights from recent Cursillo weekends", color: "hsl(4, 65%, 48%)" },
