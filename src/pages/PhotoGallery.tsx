@@ -40,7 +40,10 @@ const weekendPhotos: WeekendPhoto[] = [
   { src: "/media/photos/weekends/women-80.jpg", title: "Women's Cursillo #80", number: 80, date: "Mar. 15–18, 2001", location: "Camp St. John, FL", gender: "women" },
   { src: "/media/photos/weekends/women-89.jpg", title: "Women's Cursillo #89", number: 89, date: "May 20–23, 2004", location: "Camp St. John, FL", gender: "women" },
   { src: "/media/photos/weekends/women-92.jpg", title: "Women's Cursillo #92", number: 92, date: "April 21–24, 2005", location: "Camp St. John, FL", gender: "women" },
+  { src: "/media/photos/weekends/women-131.jpg", title: "Women's Cursillo #131", number: 131, date: "Nov 30 – Dec 3, 2023", location: "Camp St. John", gender: "women" },
   { src: "/media/photos/weekends/women-132.jpg", title: "Women's Cursillo #132", number: 132, date: "April 18–21, 2024", location: "Camp St. John", gender: "women" },
+  { src: "/media/photos/weekends/women-133.jpg", title: "Women's Cursillo #133", number: 133, date: "Sept 19–22, 2024", location: "Camp St. John", gender: "women" },
+  { src: "/media/photos/weekends/women-135.jpg", title: "Women's Cursillo #135", number: 135, date: "Sept 18–21, 2025", location: "Camp St. Johns", gender: "women" },
 ];
 
 const PhotoGallery = () => {
