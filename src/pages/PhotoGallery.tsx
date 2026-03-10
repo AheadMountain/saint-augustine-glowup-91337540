@@ -29,6 +29,17 @@ const weekendPhotos: WeekendPhoto[] = [
   { src: "/media/photos/weekends/men-133.jpg", title: "Men's Cursillo #133", number: 133, date: "Dec 7–10, 2023", location: "Camp St. John", gender: "men" },
   { src: "/media/photos/weekends/men-134.jpg", title: "Men's Cursillo #134", number: 134, date: "Apr 11–14, 2024", location: "Camp St. Johns", gender: "men" },
   { src: "/media/photos/weekends/men-135.jpg", title: "Men's Cursillo #135", number: 135, date: "Sept 12–15, 2024", location: "Camp St. John", gender: "men" },
+
+  // Women's Weekends
+  { src: "/media/photos/weekends/women-55.jpg", title: "Women's Cursillo #55", number: 55, date: "October 22–25, 1992", location: "Camp St. John, Fla.", gender: "women" },
+  { src: "/media/photos/weekends/women-62.jpg", title: "Women's Cursillo #62", number: 62, date: "Oct. 20–23, 1994", location: "Camp St. John", gender: "women" },
+  { src: "/media/photos/weekends/women-63.jpg", title: "Women's Cursillo #63", number: 63, date: "March 2–5, 1995", location: "Camp St. Johns", gender: "women" },
+  { src: "/media/photos/weekends/women-71.jpg", title: "Women's Cursillo #71", number: 71, date: "Oct. 23–26, 1997", location: "Camp St. Johns", gender: "women" },
+  { src: "/media/photos/weekends/women-73.jpg", title: "Women's Cursillo #73", number: 73, date: "March 12–15, 1998", location: "Camp St. Johns", gender: "women" },
+  { src: "/media/photos/weekends/women-80.jpg", title: "Women's Cursillo #80", number: 80, date: "Mar. 15–18, 2001", location: "Camp St. John, FL", gender: "women" },
+  { src: "/media/photos/weekends/women-89.jpg", title: "Women's Cursillo #89", number: 89, date: "May 20–23, 2004", location: "Camp St. John, FL", gender: "women" },
+  { src: "/media/photos/weekends/women-92.jpg", title: "Women's Cursillo #92", number: 92, date: "April 21–24, 2005", location: "Camp St. John, FL", gender: "women" },
+  { src: "/media/photos/weekends/women-132.jpg", title: "Women's Cursillo #132", number: 132, date: "April 18–21, 2024", location: "Camp St. John", gender: "women" },
 ];
 
 const PhotoGallery = () => {
