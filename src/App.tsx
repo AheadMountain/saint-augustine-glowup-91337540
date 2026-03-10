@@ -65,6 +65,7 @@ const App = () => (
           <Route path="/photo-gallery" element={<PhotoGallery />} />
           <Route path="/links" element={<Links />} />
           <Route path="/videos" element={<Videos />} />
+          <Route path="/weekend-materials" element={<WeekendMaterials />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
