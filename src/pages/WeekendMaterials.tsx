@@ -3,10 +3,19 @@ import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Lock, FileText } from "lucide-react";
+import { Lock, FileText, Download } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const CORRECT_PASSWORD = "dosacursillo";
+
+const materials = [
+  { title: "Rector's Guide", href: "https://drive.google.com/file/d/1SQ0gQdtpell-fKg92JOBeKQihjbq0vpo/view?usp=sharing" },
+  { title: "Rector's Guide Appendix", href: "https://drive.google.com/file/d/17JdMawJp84M6q2KF2X8pWijOF1NdDtYK/view?usp=sharing" },
+  { title: "Rector's Guide FAQ", href: "https://drive.google.com/file/d/1vE1Zzsh5ODFIJ2V4uifBeVQ7zLZZMToN/view?usp=sharing" },
+  { title: "Weekend Rollos", href: "https://drive.google.com/file/d/1yH2o5SPrCgo56uhw-x02p5fJ0u75lQ4j/view?usp=sharing" },
+  { title: "Rector(a) Notebook 2022", href: "https://docs.google.com/document/d/1iNLEi_PvwXGTu9M_cBgkJWiIbNkiABZr/edit?usp=sharing&ouid=112378510783152767028&rtpof=true&sd=true" },
+  { title: "Men's Schedule 2022", href: "https://docs.google.com/spreadsheets/d/1GctWpTPuOV6hNTOnquMeecAW7P5JuueB/edit?usp=sharing&ouid=112378510783152767028&rtpof=true&sd=true" },
+];
 
 const WeekendMaterials = () => {
   const [password, setPassword] = useState("");
@@ -60,18 +69,24 @@ const WeekendMaterials = () => {
               </form>
             </div>
           ) : (
-            <div ref={reveal} className="fade-up space-y-6">
-              <div className="bg-card border rounded-xl p-6 flex items-center gap-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent">
-                  <FileText className="h-5 w-5 text-muted-foreground" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-foreground text-sm font-sans">Weekend Materials</h3>
-                  <p className="text-xs text-muted-foreground mt-0.5 font-sans">
-                    Content coming soon. Check back for updated weekend materials.
-                  </p>
-                </div>
-              </div>
+            <div ref={reveal} className="fade-up space-y-3">
+              {materials.map((mat, i) => (
+                <a
+                  key={mat.title}
+                  href={mat.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`block no-underline fade-up stagger-${Math.min(i + 1, 6)}`}
+                >
+                  <div className="bg-card border rounded-xl p-5 flex items-center gap-4 hover-lift group">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent">
+                      <FileText className="h-5 w-5 text-muted-foreground" />
+                    </div>
+                    <h3 className="flex-1 font-semibold text-foreground text-sm font-sans">{mat.title}</h3>
+                    <Download className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
+                  </div>
+                </a>
+              ))}
             </div>
           )}
         </div>
