@@ -1,16 +1,45 @@
 import Layout from "@/components/Layout";
-import { FileText, Download, ClipboardList, BookOpen, File } from "lucide-react";
+import PageHeader from "@/components/PageHeader";
+import { FileText, Download, ExternalLink } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { Link } from "react-router-dom";
 
-const documents = [
-  { title: "Cursillo Weekend Application", icon: ClipboardList, description: "Application form for attending a Cursillo weekend", featured: true },
-  { title: "Sponsor's Guide", icon: BookOpen, description: "Information for sponsors of Cursillo candidates" },
-  { title: "Group Reunion Guide", icon: FileText, description: "How to form and participate in a Group Reunion" },
-  { title: "Ultreya Guidelines", icon: FileText, description: "Guidelines for hosting and attending Ultreyas" },
-  { title: "Prayer & Palanca Guide", icon: BookOpen, description: "How to write palanca letters and prayer support" },
-  { title: "Team Application", icon: ClipboardList, description: "Application to serve on a Cursillo weekend team" },
-  { title: "Secretariat Meeting Minutes", icon: File, description: "Minutes from recent Secretariat meetings" },
-  { title: "Cursillo Bylaws", icon: FileText, description: "Bylaws of the Cursillo Movement, Diocese of St. Augustine" },
+interface DocItem {
+  title: string;
+  description: string;
+  href: string;
+  isExternal?: boolean;
+  category: "application" | "secretariat";
+}
+
+const documents: DocItem[] = [
+  {
+    title: "English Application",
+    description: "Application for Cursillo Weekend (English)",
+    href: "https://www.staugustinecursillo.org/_files/ugd/b77f4d_aabceef924c24e34b052e1e9ef2adea5.pdf",
+    isExternal: true,
+    category: "application",
+  },
+  {
+    title: "Aplicación Español",
+    description: "Aplicación para el fin de semana de Cursillo (Español)",
+    href: "https://www.staugustinecursillo.org/_files/ugd/b77f4d_9dcc6a3c99d041bfa8bad0ed0a2f7eac.pdf",
+    isExternal: true,
+    category: "application",
+  },
+  {
+    title: "Weekend Materials",
+    description: "Materials needed for the Cursillo weekend",
+    href: "/weekend-materials",
+    category: "secretariat",
+  },
+  {
+    title: "Adoration Sign for Men #134 and Women #132",
+    description: "Cursillo Visiting Adorer sign-up sheet",
+    href: "https://www.staugustinecursillo.org/_files/ugd/b77f4d_8bf5ae25f3ae4155b1811694bc6246da.docx?dn=Cursillo%20Visiting%20Adorer.docx",
+    isExternal: true,
+    category: "secretariat",
+  },
 ];
 
 const Documents = () => {
