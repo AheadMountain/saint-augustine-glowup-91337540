@@ -5,13 +5,13 @@ import { ExternalLink } from "lucide-react";
 
 const links = [
   { title: "Daily Readings", url: "http://usccb.org/bible/readings", desc: "Today's scripture readings from the USCCB" },
-  { title: "Find A Parish", url: "http://dosafl.com/find-a-parish", desc: "Locate a parish in the Diocese of St. Augustine" },
-  { title: "Diocese of St. Augustine", url: "http://dosafl.com/cursillo", desc: "Cursillo page on the Diocese website" },
+  { title: "Find A Parish", url: "https://dosafl.com/parishes/", desc: "Locate a parish in the Diocese of St. Augustine" },
+  { title: "Diocese of St. Augustine", url: "https://dosafl.com/organizer/cursillo/", desc: "Cursillo page on the Diocese website" },
   { title: "Holy Days of Obligation", url: "http://usccb.org/beliefs-and-teachings/what-we-believe/canon-law/complementary-norms/canon-1246.cfm", desc: "Canon law on Holy Days" },
   { title: "Liturgy of the Hours", url: "http://usccb.org/prayer-and-worship/liturgy-of-the-hours/index.cfm", desc: "Pray the Divine Office" },
   { title: "National Cursillo", url: "http://natl-cursillo.org/", desc: "National Cursillo Movement website" },
-  { title: "St. Augustine Catholic Magazine", url: "http://dosafl.com/staugcatholic", desc: "Diocese magazine" },
-  { title: "Vatican Website", url: "http://news.va/", desc: "Official Vatican news" },
+  { title: "St. Augustine Catholic Magazine", url: "https://dosafl.com/communications-office/the-st-augustine-catholic/", desc: "Diocese magazine" },
+  { title: "Vatican Website", url: "https://www.vaticannews.va/en.html", desc: "Official Vatican news" },
 ];
 
 const Links = () => {
