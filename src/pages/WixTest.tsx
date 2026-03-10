@@ -11,7 +11,7 @@ const WixTest = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await wixClient.items.queryDataItems({ dataCollectionId: "Locations" }).find();
+        const result = await wixClient.items.query("Locations").find();
         setData(result.items || []);
       } catch (err: any) {
         console.error("Wix fetch error:", err);
