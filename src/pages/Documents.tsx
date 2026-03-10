@@ -36,7 +36,7 @@ const documents: DocItem[] = [
   {
     title: "Adoration Sign for Men #134 and Women #132",
     description: "Cursillo Visiting Adorer sign-up sheet",
-    href: "https://www.staugustinecursillo.org/_files/ugd/b77f4d_8bf5ae25f3ae4155b1811694bc6246da.docx?dn=Cursillo%20Visiting%20Adorer.docx",
+    href: "https://docs.google.com/document/d/1fFUAvI0xhh2Ykykmnh29XfMK2kD53_TN/edit?usp=sharing&ouid=112378510783152767028&rtpof=true&sd=true",
     isExternal: true,
     category: "secretariat",
   },
