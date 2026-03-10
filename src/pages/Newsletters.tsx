@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import { FileText, Calendar, Download } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { usePageTitle } from "@/hooks/use-page-title";
 
 const newsletters = [
   { title: "Spring 2025 Newsletter", date: "March 2025" },
