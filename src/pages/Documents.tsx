@@ -23,7 +23,7 @@ const documents: DocItem[] = [
   {
     title: "Aplicación Español",
     description: "Aplicación para el fin de semana de Cursillo (Español)",
-    href: "https://www.staugustinecursillo.org/_files/ugd/b77f4d_9dcc6a3c99d041bfa8bad0ed0a2f7eac.pdf",
+    href: "https://drive.google.com/file/d/1fhCmes9eaktxLbw1Zs6cBd-zKsNtZaDa/view?usp=sharing",
     isExternal: true,
     category: "application",
   },
