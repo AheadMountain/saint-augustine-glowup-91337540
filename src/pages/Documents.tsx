@@ -16,7 +16,7 @@ const documents: DocItem[] = [
   {
     title: "English Application",
     description: "Application for Cursillo Weekend (English)",
-    href: "https://www.staugustinecursillo.org/_files/ugd/b77f4d_aabceef924c24e34b052e1e9ef2adea5.pdf",
+    href: "https://drive.google.com/file/d/1luM6ggPg1FmTqZPT9HwycCd9UlHWeYt9/view?usp=sharing",
     isExternal: true,
     category: "application",
   },
