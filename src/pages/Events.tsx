@@ -3,6 +3,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { MapPin, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { usePageTitle } from "@/hooks/use-page-title";
 
 const englishEvents = [
   { name: "Jacksonville Ultreya", location: "Assumption Catholic Church, Kohl's Hall", tag: "SECOND FRIDAY • 7:00 PM", color: "hsl(4, 65%, 48%)" },
@@ -36,6 +37,7 @@ const EventCard = ({ event, revealRef, className = "" }: { event: typeof english
 );
 
 const Events = () => {
+  usePageTitle("Events & Schedule");
   const reveal = useScrollReveal();
 
   return (
