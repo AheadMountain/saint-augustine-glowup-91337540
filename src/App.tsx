@@ -28,6 +28,7 @@ import InRemembrance from "./pages/InRemembrance";
 import PhotoGallery from "./pages/PhotoGallery";
 import Links from "./pages/Links";
 import Videos from "./pages/Videos";
+import WeekendMaterials from "./pages/WeekendMaterials";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
