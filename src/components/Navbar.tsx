@@ -1,25 +1,125 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import RainbowStrip from "./RainbowStrip";
 import CursilloLogo from "./CursilloLogo";
 
-const navLinks = [
-  { to: "/", label: "Home" },
-  { to: "/events", label: "Events" },
-  { to: "/newsletters", label: "Newsletters" },
+interface NavItem {
+  to: string;
+  label: string;
+  children?: { to: string; label: string }[];
+}
+
+const navLinks: NavItem[] = [
+  { to: "/", label: "Home", children: [
+    { to: "/contact", label: "Contact Us" },
+    { to: "/mail-list", label: "Mail List" },
+    { to: "/mail-list-espanol", label: "Mail List Español" },
+  ]},
+  { to: "/events", label: "Events", children: [
+    { to: "/upcoming-weekends", label: "Upcoming Weekends" },
+    { to: "/the-3-day-weekend", label: "The 3-Day Weekend" },
+    { to: "/memorial-mass", label: "Advent Memorial Mass" },
+    { to: "/school-of-leaders", label: "School of Leaders" },
+    { to: "/ultreya", label: "Ultreya" },
+    { to: "/pre-cursillo", label: "Pre-Cursillo" },
+    { to: "/post-cursillo", label: "Post-Cursillo" },
+    { to: "/your-4th-day", label: "Your 4th Day" },
+    { to: "/group-reunions", label: "Group Reunions" },
+    { to: "/day-of-reflection", label: "Day of Reflection" },
+    { to: "/regional-encounter-photos", label: "Regional Encounter Photos" },
+  ]},
+  { to: "/newsletters", label: "Newsletters", children: [
+    { to: "/testimonials", label: "Testimonials" },
+    { to: "/in-remembrance", label: "In Remembrance" },
+  ]},
+  { to: "/media", label: "Media", children: [
+    { to: "/photo-gallery", label: "Photo Gallery" },
+    { to: "/links", label: "Links" },
+    { to: "/videos", label: "Videos" },
+  ]},
   { to: "/documents", label: "Documents" },
   { to: "/secretariat", label: "Secretariat" },
 ];
 
+const DropdownMenu = ({ item, isActive }: { item: NavItem; isActive: boolean }) => {
+  const [open, setOpen] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout>();
+  const location = useLocation();
+
+  const handleEnter = () => {
+    clearTimeout(timeoutRef.current);
+    setOpen(true);
+  };
+
+  const handleLeave = () => {
+    timeoutRef.current = setTimeout(() => setOpen(false), 150);
+  };
+
+  useEffect(() => {
+    setOpen(false);
+  }, [location.pathname]);
+
+  if (!item.children) {
+    return (
+      <Link
+        to={item.to}
+        className={cn(
+          "text-sm font-medium font-sans transition-colors link-underline",
+          isActive ? "text-primary" : "text-muted-foreground hover:text-primary"
+        )}
+      >
+        {item.label}
+      </Link>
+    );
+  }
+
+  return (
+    <div className="relative" onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
+      <Link
+        to={item.to}
+        className={cn(
+          "text-sm font-medium font-sans transition-colors link-underline inline-flex items-center gap-1",
+          isActive ? "text-primary" : "text-muted-foreground hover:text-primary"
+        )}
+      >
+        {item.label}
+        <ChevronDown className={cn("h-3.5 w-3.5 transition-transform duration-200", open && "rotate-180")} />
+      </Link>
+      {open && (
+        <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 z-50">
+          <div className="bg-popover border border-border rounded-lg shadow-lg py-2 min-w-[200px] animate-fade-in">
+            {item.children.map((child) => (
+              <Link
+                key={child.to}
+                to={child.to}
+                className={cn(
+                  "block px-4 py-2 text-sm font-sans transition-colors",
+                  location.pathname === child.to
+                    ? "text-primary bg-primary/5"
+                    : "text-foreground hover:bg-accent hover:text-primary"
+                )}
+              >
+                {child.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
   const location = useLocation();
 
   useEffect(() => {
     setOpen(false);
+    setMobileExpanded(null);
   }, [location.pathname]);
 
   useEffect(() => {
@@ -53,18 +153,11 @@ const Navbar = () => {
 
           <nav className="hidden lg:flex items-center gap-7">
             {navLinks.map((link) => (
-              <Link
+              <DropdownMenu
                 key={link.to}
-                to={link.to}
-                className={cn(
-                  "text-sm font-medium font-sans transition-colors link-underline",
-                  location.pathname === link.to
-                    ? "text-primary"
-                    : "text-muted-foreground hover:text-primary"
-                )}
-              >
-                {link.label}
-              </Link>
+                item={link}
+                isActive={location.pathname === link.to}
+              />
             ))}
             <Link
               to="/documents"
@@ -88,19 +181,49 @@ const Navbar = () => {
         <div className="fixed top-[73px] inset-x-0 bottom-0 bg-background z-[99] p-6 lg:hidden overflow-y-auto animate-fade-in">
           <nav className="flex flex-col gap-1">
             {navLinks.map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
-                onClick={() => setOpen(false)}
-                className={cn(
-                  "py-3.5 px-0 text-lg font-medium font-sans border-b border-border transition-colors",
-                  location.pathname === link.to
-                    ? "text-primary"
-                    : "text-foreground"
+              <div key={link.to}>
+                <div className="flex items-center justify-between border-b border-border">
+                  <Link
+                    to={link.to}
+                    onClick={() => setOpen(false)}
+                    className={cn(
+                      "py-3.5 px-0 text-lg font-medium font-sans transition-colors flex-1",
+                      location.pathname === link.to ? "text-primary" : "text-foreground"
+                    )}
+                  >
+                    {link.label}
+                  </Link>
+                  {link.children && (
+                    <button
+                      onClick={() => setMobileExpanded(mobileExpanded === link.to ? null : link.to)}
+                      className="p-2"
+                      aria-label={`Expand ${link.label}`}
+                    >
+                      <ChevronDown className={cn(
+                        "h-5 w-5 text-muted-foreground transition-transform duration-200",
+                        mobileExpanded === link.to && "rotate-180"
+                      )} />
+                    </button>
+                  )}
+                </div>
+                {link.children && mobileExpanded === link.to && (
+                  <div className="pl-4 pb-2">
+                    {link.children.map((child) => (
+                      <Link
+                        key={child.to}
+                        to={child.to}
+                        onClick={() => setOpen(false)}
+                        className={cn(
+                          "block py-2.5 text-base font-sans transition-colors",
+                          location.pathname === child.to ? "text-primary" : "text-muted-foreground"
+                        )}
+                      >
+                        {child.label}
+                      </Link>
+                    ))}
+                  </div>
                 )}
-              >
-                {link.label}
-              </Link>
+              </div>
             ))}
             <Link
               to="/documents"
