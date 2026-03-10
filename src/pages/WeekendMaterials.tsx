@@ -69,13 +69,14 @@ const WeekendMaterials = () => {
               </form>
             </div>
           ) : (
-            <div ref={reveal} className="fade-up space-y-3">
+            <div className="space-y-3">
               {materials.map((mat, i) => (
                 <a
                   key={mat.title}
                   href={mat.href}
                   target="_blank"
                   rel="noopener noreferrer"
+                  ref={reveal}
                   className={`block no-underline fade-up stagger-${Math.min(i + 1, 6)}`}
                 >
                   <div className="bg-card border rounded-xl p-5 flex items-center gap-4 hover-lift group">
