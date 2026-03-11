@@ -103,7 +103,7 @@ const Index = () => {
           </div>
 
           {/* Right column — Quote card */}
-          <div className="relative fade-up" ref={reveal} style={{ transitionDelay: "0.15s" }}>
+          <div className="relative fade-up" ref={reveal}>
             <div
               className="relative rounded-2xl backdrop-blur-sm overflow-hidden"
               style={{
