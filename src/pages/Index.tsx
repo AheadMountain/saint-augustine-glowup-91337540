@@ -192,8 +192,6 @@ const Index = () => {
               <div
                 key={item.num}
                 className="relative bg-card rounded-xl border border-border/40 overflow-hidden hover-lift fade-child"
-                style={{ transitionDelay: `${i * 0.15}s` }}
-              >
                 <div
                   className="absolute top-0 left-0 w-1 h-full"
                   style={{ background: item.color }}
