@@ -103,7 +103,7 @@ const Index = () => {
           </div>
 
           {/* Right column — Quote card */}
-          <div className="relative fade-up" ref={reveal} style={{ transitionDelay: "0.15s" }}>
+          <div className="relative fade-up" ref={reveal}>
             <div
               className="relative rounded-2xl backdrop-blur-sm overflow-hidden"
               style={{
@@ -192,7 +192,6 @@ const Index = () => {
               <div
                 key={item.num}
                 className="relative bg-card rounded-xl border border-border/40 overflow-hidden hover-lift fade-child"
-                style={{ transitionDelay: `${i * 0.15}s` }}
               >
                 <div
                   className="absolute top-0 left-0 w-1 h-full"
@@ -243,7 +242,7 @@ const Index = () => {
                 key={event.title}
                 to={event.to}
                 className="fade-child flex gap-5 no-underline text-foreground border border-light-tan rounded-xl hover:border-primary hover:shadow-lg"
-                style={{ padding: 28, background: "hsl(var(--warm-white))", transitionDelay: `${i * 0.12}s` }}
+                style={{ padding: 28, background: "hsl(var(--warm-white))" }}
               >
                 <div className="flex flex-col items-center justify-center min-w-[60px] bg-cream rounded-[10px] py-3 px-2">
                   <span className="text-[0.7rem] uppercase tracking-[0.08em] text-primary font-semibold font-sans">
@@ -294,7 +293,7 @@ const Index = () => {
               </p>
             </div>
 
-            <div ref={reveal} className="fade-up" style={{ transitionDelay: "0.15s" }}>
+            <div ref={reveal} className="fade-up">
               <div
                 className="relative bg-card border border-border/60 rounded-[14px] overflow-hidden"
                 style={{ padding: "40px 32px" }}
