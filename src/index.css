@@ -117,9 +117,10 @@
   /* Scroll-triggered fade-up animation */
   .fade-up {
     opacity: 0;
-    transform: translateY(32px);
-    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-                transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    transform: translateY(20px);
+    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
   }
   .fade-up.visible {
     opacity: 1;
@@ -137,9 +138,10 @@
   /* Fade-up with scale */
   .fade-up-scale {
     opacity: 0;
-    transform: translateY(32px) scale(0.97);
-    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-                transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    transform: translateY(16px) scale(0.98);
+    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
   }
   .fade-up-scale.visible {
     opacity: 1;
@@ -149,9 +151,10 @@
   /* Fade in from left */
   .fade-left {
     opacity: 0;
-    transform: translateX(-40px);
-    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-                transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    transform: translateX(-24px);
+    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
   }
   .fade-left.visible {
     opacity: 1;
@@ -161,9 +164,10 @@
   /* Fade in from right */
   .fade-right {
     opacity: 0;
-    transform: translateX(40px);
-    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-                transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    transform: translateX(24px);
+    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
   }
   .fade-right.visible {
     opacity: 1;

@@ -13,12 +13,15 @@ export function useScrollReveal(threshold = 0.15) {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
+            // Use requestAnimationFrame for smoother class addition
+            requestAnimationFrame(() => {
+              entry.target.classList.add("visible");
+            });
             observerRef.current?.unobserve(entry.target);
           }
         });
       },
-      { threshold, rootMargin: "0px 0px -60px 0px" }
+      { threshold: 0.08, rootMargin: "0px 0px -30px 0px" }
     );
 
     // Observe any already-registered elements
