@@ -191,7 +191,7 @@ const Index = () => {
             ].map((item, i) => (
               <div
                 key={item.num}
-                className={`relative bg-card rounded-xl border border-border/40 overflow-hidden hover-lift opacity-0 translate-y-5 transition-all duration-[1s] ease-[cubic-bezier(0.16,1,0.3,1)]`}
+                className="relative bg-card rounded-xl border border-border/40 overflow-hidden hover-lift fade-child"
                 style={{ transitionDelay: `${i * 0.15}s` }}
               >
                 <div
@@ -242,7 +242,7 @@ const Index = () => {
               <Link
                 key={event.title}
                 to={event.to}
-                className="opacity-0 translate-y-5 transition-all duration-[1s] ease-[cubic-bezier(0.16,1,0.3,1)] flex gap-5 no-underline text-foreground border border-light-tan rounded-xl hover:border-primary hover:shadow-lg"
+                className="fade-child flex gap-5 no-underline text-foreground border border-light-tan rounded-xl hover:border-primary hover:shadow-lg"
                 style={{ padding: 28, background: "hsl(var(--warm-white))", transitionDelay: `${i * 0.12}s` }}
               >
                 <div className="flex flex-col items-center justify-center min-w-[60px] bg-cream rounded-[10px] py-3 px-2">
