@@ -191,7 +191,7 @@ const Index = () => {
             ].map((item, i) => (
               <div
                 key={item.num}
-                className={`relative bg-card rounded-xl border border-border/40 overflow-hidden hover-lift opacity-0 translate-y-5 transition-all duration-[1s] ease-[cubic-bezier(0.16,1,0.3,1)]`}
+                className="relative bg-card rounded-xl border border-border/40 overflow-hidden hover-lift fade-child"
                 style={{ transitionDelay: `${i * 0.15}s` }}
               >
                 <div
