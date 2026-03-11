@@ -292,7 +292,7 @@ const Index = () => {
               </p>
             </div>
 
-            <div ref={reveal} className="fade-up" style={{ transitionDelay: "0.15s" }}>
+            <div ref={reveal} className="fade-up">
               <div
                 className="relative bg-card border border-border/60 rounded-[14px] overflow-hidden"
                 style={{ padding: "40px 32px" }}
