@@ -232,7 +232,7 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div ref={reveal} className="fade-up grid grid-cols-1 md:grid-cols-2 gap-5">
             {[
               { month: "Mar", day: "5", type: "English Weekend", title: "Men's #139", detail: "March 5–8, 2026", action: "Register →", to: "/documents" },
               { month: "Mar", day: "12", type: "English Weekend", title: "Women's #137", detail: "March 12–15, 2026", action: "Register →", to: "/documents" },
@@ -242,9 +242,8 @@ const Index = () => {
               <Link
                 key={event.title}
                 to={event.to}
-                ref={reveal}
-                className="fade-up flex gap-5 no-underline text-foreground border border-light-tan rounded-xl hover:border-primary hover:shadow-lg transition-all duration-250"
-                style={{ padding: 28, background: "hsl(var(--warm-white))", transitionDelay: `${i * 0.1}s` }}
+                className="opacity-0 translate-y-5 transition-all duration-[1s] ease-[cubic-bezier(0.16,1,0.3,1)] flex gap-5 no-underline text-foreground border border-light-tan rounded-xl hover:border-primary hover:shadow-lg"
+                style={{ padding: 28, background: "hsl(var(--warm-white))", transitionDelay: `${i * 0.12}s` }}
               >
                 <div className="flex flex-col items-center justify-center min-w-[60px] bg-cream rounded-[10px] py-3 px-2">
                   <span className="text-[0.7rem] uppercase tracking-[0.08em] text-primary font-semibold font-sans">
