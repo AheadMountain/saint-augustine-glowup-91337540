@@ -241,7 +241,7 @@ const Index = () => {
                 key={event.title}
                 to={event.to}
                 className="fade-child flex gap-5 no-underline text-foreground border border-light-tan rounded-xl hover:border-primary hover:shadow-lg"
-                style={{ padding: 28, background: "hsl(var(--warm-white))", transitionDelay: `${i * 0.12}s` }}
+                style={{ padding: 28, background: "hsl(var(--warm-white))" }}
               >
                 <div className="flex flex-col items-center justify-center min-w-[60px] bg-cream rounded-[10px] py-3 px-2">
                   <span className="text-[0.7rem] uppercase tracking-[0.08em] text-primary font-semibold font-sans">
