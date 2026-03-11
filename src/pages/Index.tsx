@@ -168,7 +168,7 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div ref={reveal} className="fade-up grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
                 num: "01",
@@ -191,23 +191,24 @@ const Index = () => {
             ].map((item, i) => (
               <div
                 key={item.num}
-                ref={reveal}
-                className="fade-up relative bg-card rounded-xl border border-border/40 overflow-hidden hover-lift"
-                style={{ padding: "36px 28px", transitionDelay: `${i * 0.1}s` }}
+                className={`relative bg-card rounded-xl border border-border/40 overflow-hidden hover-lift opacity-0 translate-y-5 transition-all duration-[1s] ease-[cubic-bezier(0.16,1,0.3,1)]`}
+                style={{ transitionDelay: `${i * 0.15}s` }}
               >
                 <div
                   className="absolute top-0 left-0 w-1 h-full"
                   style={{ background: item.color }}
                 />
-                <div className="font-serif text-[2.5rem] font-light text-gold leading-none mb-4">
+                <div className="font-serif text-[2.5rem] font-light text-gold leading-none mb-4" style={{ padding: "36px 28px 0" }}>
                   {item.num}
                 </div>
-                <h3 className="font-serif text-[1.35rem] font-semibold text-charcoal mb-2.5">
-                  {item.title}
-                </h3>
-                <p className="text-[0.92rem] text-muted-foreground leading-[1.7] font-sans">
-                  {item.desc}
-                </p>
+                <div style={{ padding: "0 28px 36px" }}>
+                  <h3 className="font-serif text-[1.35rem] font-semibold text-charcoal mb-2.5">
+                    {item.title}
+                  </h3>
+                  <p className="text-[0.92rem] text-muted-foreground leading-[1.7] font-sans">
+                    {item.desc}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
