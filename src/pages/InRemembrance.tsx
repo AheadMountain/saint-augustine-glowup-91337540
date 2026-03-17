@@ -1,7 +1,8 @@
 import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
-import { Heart } from "lucide-react";
+import { Heart, Search } from "lucide-react";
+import { useState, useMemo } from "react";
 
 const names = [
   "Nestor Armando Gil", "Maritza Del Valle", "Ana Zometa", "Bob Litza",
@@ -25,8 +26,24 @@ const names = [
   "Peter Royal", "Lorraine Anne Gailey Losch",
 ];
 
+const sortedNames = [...names].sort((a, b) => {
+  // Sort by last meaningful word (surname approximation)
+  const lastWord = (n: string) => {
+    const parts = n.replace(/"/g, "").split(/\s+/);
+    return parts[parts.length - 1].toLowerCase();
+  };
+  return lastWord(a).localeCompare(lastWord(b));
+});
+
 const InRemembrance = () => {
   const reveal = useScrollReveal();
+  const [search, setSearch] = useState("");
+
+  const filtered = useMemo(() => {
+    if (!search.trim()) return sortedNames;
+    const q = search.toLowerCase();
+    return sortedNames.filter((n) => n.toLowerCase().includes(q));
+  }, [search]);
 
   return (
     <Layout>
@@ -40,14 +57,32 @@ const InRemembrance = () => {
             </p>
           </div>
 
-          <div ref={reveal} className="fade-up bg-card border rounded-xl p-8">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2">
-              {names.map((name) => (
-                <p key={name} className="text-sm text-muted-foreground font-sans py-1 border-b border-border/40 last:border-0">
-                  {name}
-                </p>
-              ))}
+          {/* Search */}
+          <div ref={reveal} className="fade-up mb-6">
+            <div className="relative max-w-sm mx-auto">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <input
+                type="text"
+                placeholder="Search by name…"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                className="w-full pl-10 pr-4 py-2.5 rounded-lg border bg-card text-sm font-sans text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition"
+              />
             </div>
+          </div>
+
+          <div ref={reveal} className="fade-up bg-card border rounded-xl p-8">
+            {filtered.length === 0 ? (
+              <p className="text-sm text-muted-foreground font-sans text-center py-4">No names found.</p>
+            ) : (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2">
+                {filtered.map((name) => (
+                  <p key={name} className="text-sm text-muted-foreground font-sans py-1 border-b border-border/40 last:border-0">
+                    {name}
+                  </p>
+                ))}
+              </div>
+            )}
           </div>
 
           <div ref={reveal} className="fade-up mt-8 text-center">
