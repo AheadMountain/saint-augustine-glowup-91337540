@@ -78,7 +78,7 @@ const PhotoGallery = () => {
 
       {/* Lightbox */}
       {lightbox !== null && (
-        <div className="fixed inset-0 z-50 bg-black/90 flex flex-col items-center justify-center p-4" onClick={() => setLightbox(null)}>
+        <div className="fixed inset-0 z-[300] bg-black/95 flex flex-col items-center justify-center p-4" onClick={() => setLightbox(null)}>
           <button className="absolute top-4 right-4 text-white/70 hover:text-white z-10" onClick={() => setLightbox(null)}>
             <X className="h-8 w-8" />
           </button>
