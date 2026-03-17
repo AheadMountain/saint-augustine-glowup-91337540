@@ -52,6 +52,8 @@ const PhotoGallery = () => {
   const [tab, setTab] = useState<"men" | "women">("men");
   const [search, setSearch] = useState("");
 
+  const isSearching = search.trim().length > 0;
+
   const filtered = useMemo(() => {
     const byGender = weekendPhotos.filter((p) => p.gender === tab);
     if (!search.trim()) return byGender;
@@ -145,12 +147,12 @@ const PhotoGallery = () => {
               </p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div key={`${tab}-${search}`} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {filtered.map((photo, i) => (
                 <div
                   key={photo.src}
-                  ref={reveal}
-                  className={`fade-up stagger-${(i % 6) + 1} cursor-pointer group overflow-hidden rounded-xl border bg-card transition-shadow duration-300 hover:shadow-lg`}
+                  ref={isSearching ? undefined : reveal}
+                  className={`${isSearching ? "" : `fade-up stagger-${(i % 6) + 1}`} cursor-pointer group overflow-hidden rounded-xl border bg-card transition-shadow duration-300 hover:shadow-lg`}
                   onClick={() => openLightbox(photo)}
                 >
                   <div className="aspect-[4/3] overflow-hidden">
