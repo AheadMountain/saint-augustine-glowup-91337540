@@ -4,14 +4,14 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { usePageTitle } from "@/hooks/use-page-title";
 
 const newsletters = [
-  { title: "Spring 2025 Newsletter", date: "March 2025" },
-  { title: "Winter 2024 Newsletter", date: "December 2024" },
-  { title: "Fall 2024 Newsletter", date: "September 2024" },
-  { title: "Summer 2024 Newsletter", date: "June 2024" },
-  { title: "Spring 2024 Newsletter", date: "March 2024" },
-  { title: "Winter 2023 Newsletter", date: "December 2023" },
-  { title: "Fall 2023 Newsletter", date: "September 2023" },
-  { title: "Summer 2023 Newsletter", date: "June 2023" },
+  { title: "Spring 2025 Newsletter", date: "March 2025", excerpt: "Upcoming Men's & Women's weekends, Ultreya schedule, and Lay Director reflections." },
+  { title: "Winter 2024 Newsletter", date: "December 2024", excerpt: "Advent season message, weekend recap, and holiday gathering details." },
+  { title: "Fall 2024 Newsletter", date: "September 2024", excerpt: "Fall weekend preparations, School of Leaders update, and community highlights." },
+  { title: "Summer 2024 Newsletter", date: "June 2024", excerpt: "Summer Ultreya dates, Group Reunion tips, and cursillista testimonials." },
+  { title: "Spring 2024 Newsletter", date: "March 2024", excerpt: "Lenten reflections, spring weekend announcements, and volunteer opportunities." },
+  { title: "Winter 2023 Newsletter", date: "December 2023", excerpt: "Year-in-review, Christmas message from Spiritual Advisor, and upcoming events." },
+  { title: "Fall 2023 Newsletter", date: "September 2023", excerpt: "Regional Encounter recap, fall weekend team formation, and prayer intentions." },
+  { title: "Summer 2023 Newsletter", date: "June 2023", excerpt: "Summer retreat details, Fourth Day living, and community service projects." },
 ];
 
 const seasonColors: Record<string, string> = {
@@ -55,7 +55,8 @@ const Newsletters = () => {
                   </div>
                   <div className="flex-1 min-w-0">
                     <h3 className="font-semibold text-foreground text-sm font-sans">{nl.title}</h3>
-                    <div className="flex items-center gap-1.5 text-xs text-muted-foreground mt-0.5 font-sans">
+                    <p className="text-xs text-muted-foreground font-sans mt-0.5 line-clamp-1">{nl.excerpt}</p>
+                    <div className="flex items-center gap-1.5 text-xs text-muted-foreground/60 mt-1 font-sans">
                       <Calendar className="h-3 w-3" />
                       <span>{nl.date}</span>
                     </div>
