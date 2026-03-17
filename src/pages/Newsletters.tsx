@@ -55,7 +55,8 @@ const Newsletters = () => {
                   </div>
                   <div className="flex-1 min-w-0">
                     <h3 className="font-semibold text-foreground text-sm font-sans">{nl.title}</h3>
-                    <div className="flex items-center gap-1.5 text-xs text-muted-foreground mt-0.5 font-sans">
+                    <p className="text-xs text-muted-foreground font-sans mt-0.5 line-clamp-1">{nl.excerpt}</p>
+                    <div className="flex items-center gap-1.5 text-xs text-muted-foreground/60 mt-1 font-sans">
                       <Calendar className="h-3 w-3" />
                       <span>{nl.date}</span>
                     </div>
