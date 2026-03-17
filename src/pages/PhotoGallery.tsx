@@ -52,6 +52,8 @@ const PhotoGallery = () => {
   const [tab, setTab] = useState<"men" | "women">("men");
   const [search, setSearch] = useState("");
 
+  const isSearching = search.trim().length > 0;
+
   const filtered = useMemo(() => {
     const byGender = weekendPhotos.filter((p) => p.gender === tab);
     if (!search.trim()) return byGender;
