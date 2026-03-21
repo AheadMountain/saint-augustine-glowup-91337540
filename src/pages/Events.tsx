@@ -127,7 +127,7 @@ const Events = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 { title: "Men's #140", date: "September 3–6, 2026", bg: "hsl(348, 70%, 33%)" },
-                { title: "Women's #137", date: "March 12–15, 2026", bg: "hsl(18, 8%, 22%)" },
+                { title: "Women's #138", date: "September 17–20, 2026", bg: "hsl(18, 8%, 22%)" },
               ].map((w, i) => (
                 <div
                   key={w.title}
