@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
 const weekends = [
-  { title: "Men's #139", date: "March 5–8, 2026", bg: "hsl(348, 70%, 33%)" },
+  { title: "Men's #140", date: "September 3–6, 2026", bg: "hsl(348, 70%, 33%)" },
   { title: "Women's #137", date: "March 12–15, 2026", bg: "hsl(18, 8%, 22%)" },
   { title: "Spanish Men's & Women's", date: "September 2026 · Dates TBA", bg: "hsl(145, 35%, 28%)" },
 ];

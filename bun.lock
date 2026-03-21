@@ -460,29 +460,29 @@
 
     "@vitest/utils": ["@vitest/utils@3.2.4", "", { "dependencies": { "@vitest/pretty-format": "3.2.4", "loupe": "^3.1.4", "tinyrainbow": "^2.0.0" } }, "sha512-fB2V0JFrQSMsCo9HiSq3Ezpdv4iYaXRG1Sx8edX3MwxfyNn83mKiGzOcH+Fkxt4MHxr3y42fQi1oeAInqgX2QA=="],
 
-    "@wix/auto_sdk_data_backups": ["@wix/auto_sdk_data_backups@1.0.44", "", { "dependencies": { "@wix/sdk-runtime": "^1.0.8", "@wix/sdk-types": "^1.17.4" } }, "sha512-doy8Jedc0QHPxHtAqx8sjEZcEJaQ+1JN+0a1RoCBIGiYhD91CInP7vD5IOW51odQbXWsGml+bCbAVMf7Ny1YZQ=="],
+    "@wix/auto_sdk_data_backups": ["@wix/auto_sdk_data_backups@1.0.45", "", { "dependencies": { "@wix/sdk-runtime": "^1.0.10", "@wix/sdk-types": "^1.17.6" } }, "sha512-SHFoixU9YSmuM40SWV+xzGJFnAOm9qdFChT8k0IAN4GhI1xKRsgrY6T9tKEEjV5+yNhHSG0TOaFsFwh8Pp0lmw=="],
 
-    "@wix/auto_sdk_data_collections": ["@wix/auto_sdk_data_collections@1.0.72", "", { "dependencies": { "@wix/sdk-runtime": "^1.0.8", "@wix/sdk-types": "^1.17.4" } }, "sha512-TN4ajFb/3zj3IgFRIY5DVuDxm7OhSz0ruDDjZAggkfJq7nlWYkBdZlZyzVSguQUVHpvR1DFyF5MQRYzAaur+aw=="],
+    "@wix/auto_sdk_data_collections": ["@wix/auto_sdk_data_collections@1.0.73", "", { "dependencies": { "@wix/sdk-runtime": "^1.0.10", "@wix/sdk-types": "^1.17.6" } }, "sha512-PgWqsH6QokUIRRBjJrwphROND6G90FmHA6DAlxK8bW5hkX85QmXNAe/aq4jffFk41WRS7sKEFldVbalCY4PefQ=="],
 
-    "@wix/auto_sdk_data_data-sync-jobs": ["@wix/auto_sdk_data_data-sync-jobs@1.0.14", "", { "dependencies": { "@wix/sdk-runtime": "^1.0.8", "@wix/sdk-types": "^1.17.4" } }, "sha512-b+scNpztuwl4csvHFn+rY26ZqiuxjCAJfUNu6jNiWVSu2jRdXwIsNRuSnWg4Q6l/eIRis8gor3/j4dCMNDppaQ=="],
+    "@wix/auto_sdk_data_data-sync-jobs": ["@wix/auto_sdk_data_data-sync-jobs@1.0.15", "", { "dependencies": { "@wix/sdk-runtime": "^1.0.10", "@wix/sdk-types": "^1.17.6" } }, "sha512-8bR7B6fWQ35txVQlG0n8lMsMZp/M5lmrK5S7LP9vJNmWY+XBC4fSD/NiPp8klYmS8/BMsdyZmgDCnQlk0ujh9A=="],
 
-    "@wix/auto_sdk_data_external-database": ["@wix/auto_sdk_data_external-database@1.0.26", "", { "dependencies": { "@wix/sdk-runtime": "^1.0.8", "@wix/sdk-types": "^1.17.4" } }, "sha512-yjg6luz7CRWCJsWk+Ht4KfgUNS8RslJtF4iRyMZNk5D7wsdBx+UVZsC9qkkLXjoTpmi4dE41hV8VU4Fgqz1A+g=="],
+    "@wix/auto_sdk_data_external-database": ["@wix/auto_sdk_data_external-database@1.0.27", "", { "dependencies": { "@wix/sdk-runtime": "^1.0.10", "@wix/sdk-types": "^1.17.6" } }, "sha512-hGtJ83OdcW31EVgB4u+sedhEJ/Bbo/gl+KLYi1gMdTS1HRd1xbYffOO3SMypI0pmtJ1zrpnx2pb3hGzLagzQAw=="],
 
-    "@wix/auto_sdk_data_external-database-connections": ["@wix/auto_sdk_data_external-database-connections@1.0.42", "", { "dependencies": { "@wix/sdk-runtime": "^1.0.8", "@wix/sdk-types": "^1.17.4" } }, "sha512-z5J0qlABhyxFCKaDbpt3jZR4MSaBBNYTxGwFyF3Csb9PhHscj+EIYWzhf76T8S1kzwnLNNiWD9O4SJ/WtMb4+w=="],
+    "@wix/auto_sdk_data_external-database-connections": ["@wix/auto_sdk_data_external-database-connections@1.0.43", "", { "dependencies": { "@wix/sdk-runtime": "^1.0.10", "@wix/sdk-types": "^1.17.6" } }, "sha512-mZ6PSS+Nwmbkh2w5FRlhomiU3p3aljPjhXsIXkR0QMzRGa4aw7n01dOcCwFkVDpQT9WIQScazJW61t2GM323Pg=="],
 
-    "@wix/auto_sdk_data_indexes": ["@wix/auto_sdk_data_indexes@1.0.47", "", { "dependencies": { "@wix/sdk-runtime": "^1.0.8", "@wix/sdk-types": "^1.17.4" } }, "sha512-oVqJYOj6gdKNcNGeBOv6yKRT0TE/9fb4LkeMX6x1yv8S3urnoR0f9u8sZJgCg4iVFAczHprSMPU7Zl0+0Wnk5w=="],
+    "@wix/auto_sdk_data_indexes": ["@wix/auto_sdk_data_indexes@1.0.48", "", { "dependencies": { "@wix/sdk-runtime": "^1.0.10", "@wix/sdk-types": "^1.17.6" } }, "sha512-S6jWSSY9UIqhXVGIAf6uu9ub9QYkvmh/dPx7dTBqG0HJMGSoyy5kMxRxAcUeWmY5Yf2nJu1e/I4qEPapf2VF8Q=="],
 
-    "@wix/auto_sdk_data_movement-jobs": ["@wix/auto_sdk_data_movement-jobs@1.0.46", "", { "dependencies": { "@wix/sdk-runtime": "^1.0.8", "@wix/sdk-types": "^1.17.4" } }, "sha512-kzklsO7VQA7ITp+YOG+fhTgs92YB2+1FiT72BuKHHW3gvXPXTXJ9/e0ltoW31OAE+3E6Z9ZRh72YvBL9Yh7eRQ=="],
+    "@wix/auto_sdk_data_movement-jobs": ["@wix/auto_sdk_data_movement-jobs@1.0.47", "", { "dependencies": { "@wix/sdk-runtime": "^1.0.10", "@wix/sdk-types": "^1.17.6" } }, "sha512-OFqEyvjip+Usl4m/AIOvWXtcBU4lHe20ijVtXpOgVBusgg2CdSSbU2NzcYp41v8oOx1/GbzucQALi4h8iOFf6g=="],
 
-    "@wix/auto_sdk_data_permissions": ["@wix/auto_sdk_data_permissions@1.0.43", "", { "dependencies": { "@wix/sdk-runtime": "^1.0.8", "@wix/sdk-types": "^1.17.4" } }, "sha512-zyBhGP+blycs07CJfL/0oq4gKWoY94tcfp45WZk07/7d20fquMPG/FB/k+98u/l/C8fUY7pCiKeUt2eUEDkZkQ=="],
+    "@wix/auto_sdk_data_permissions": ["@wix/auto_sdk_data_permissions@1.0.44", "", { "dependencies": { "@wix/sdk-runtime": "^1.0.10", "@wix/sdk-types": "^1.17.6" } }, "sha512-rsDhCK2LPsMpqzcOYdJ4p7JH/y9fI9eaI8ERV5JBYuEnzTuyvmqFFxu8Qv7jRcn4rVqZ2qgVn3yN0WU0P5LzBA=="],
 
-    "@wix/auto_sdk_data_sharing": ["@wix/auto_sdk_data_sharing@1.0.15", "", { "dependencies": { "@wix/sdk-runtime": "^1.0.8", "@wix/sdk-types": "^1.17.4" } }, "sha512-RYYFHrctn1DridTjY2Mi7kOs/ctppAxYFYFtpHRnTWGoTC/h+vs5Q5/JEJjTFJacR4br+3DtJCNN+B/bMRurmQ=="],
+    "@wix/auto_sdk_data_sharing": ["@wix/auto_sdk_data_sharing@1.0.16", "", { "dependencies": { "@wix/sdk-runtime": "^1.0.10", "@wix/sdk-types": "^1.17.6" } }, "sha512-AxujQjL6O+AgK9FajHBtxqV+NuVMIl59XsuFoQn969F54OTfpY+Fydnr8yLc7nP6jSy+GHO9EIXx+EUZALVDIQ=="],
 
-    "@wix/auto_sdk_data_tasks": ["@wix/auto_sdk_data_tasks@1.0.34", "", { "dependencies": { "@wix/sdk-runtime": "^1.0.8", "@wix/sdk-types": "^1.17.4" } }, "sha512-zXHs7UPhJYT49Ipyw4LO+HPnna9zzgY+RvGFz6MYMk9doQPdVGBTSua5TFwppGwzlVEf11yCazbrYl9GsnRg4A=="],
+    "@wix/auto_sdk_data_tasks": ["@wix/auto_sdk_data_tasks@1.0.35", "", { "dependencies": { "@wix/sdk-runtime": "^1.0.10", "@wix/sdk-types": "^1.17.6" } }, "sha512-rSl9NTVXyjwNCMfPqeUtwQheARRD9DfB8hGaXe/LxLJsFatQSHSvD4UFGOBrK1RIIVX6RDNAYEg1KPsWlV46dA=="],
 
-    "@wix/auto_sdk_ecom_checkout": ["@wix/auto_sdk_ecom_checkout@1.0.139", "", { "dependencies": { "@wix/sdk-runtime": "^1.0.8", "@wix/sdk-types": "^1.17.4" } }, "sha512-AaiXL7nyPOYNAyirk7jd9h2kRKc7hyPWpONalQWPp2gRK26GkYEL2OnhqBsoNFUNNi5jR7hcjtk40K+QDyNtKg=="],
+    "@wix/auto_sdk_ecom_checkout": ["@wix/auto_sdk_ecom_checkout@1.0.140", "", { "dependencies": { "@wix/sdk-runtime": "^1.0.10", "@wix/sdk-types": "^1.17.6" } }, "sha512-K7RNGHjOoIh7+zQZjt22z1Nb93A60xIFrOoV27BzxO2wz054KXsXj93cBX4XrJ2B2XKqyWLjDf6rPSgL4qI3jw=="],
 
-    "@wix/auto_sdk_ecom_current-cart": ["@wix/auto_sdk_ecom_current-cart@1.0.155", "", { "dependencies": { "@wix/sdk-runtime": "^1.0.8", "@wix/sdk-types": "^1.17.4" } }, "sha512-Kktz1AwsGjvaWZN6PNkCtD1QuQ4Eg0RJzLCozyEn2x2YH2vjedx5vzRGCAAeo9Ppkz1MOSUhtpSpKKkVO3Iznw=="],
+    "@wix/auto_sdk_ecom_current-cart": ["@wix/auto_sdk_ecom_current-cart@1.0.156", "", { "dependencies": { "@wix/sdk-runtime": "^1.0.10", "@wix/sdk-types": "^1.17.6" } }, "sha512-2ja/y70zz4Wz7e6LfeT1NNzQu9YUcobCgHvBRyDfKSIEjGE1uama1tsFd8EVv++sf5scgPO7aHdQPl9ODUAPNg=="],
 
     "@wix/auto_sdk_identity_authentication": ["@wix/auto_sdk_identity_authentication@1.0.44", "", { "dependencies": { "@wix/sdk-runtime": "^1.0.8", "@wix/sdk-types": "^1.17.4" } }, "sha512-FH0zvwQFV+gB36zmhZmfLFphymbUyD7qvzUVj5pVZV34B2UyLka0RQYWtlMFJ5Itu0fMfvoiyf1PFOmsweFJIg=="],
 
@@ -494,7 +494,7 @@
 
     "@wix/auto_sdk_redirects_redirects": ["@wix/auto_sdk_redirects_redirects@1.0.40", "", { "dependencies": { "@wix/sdk-runtime": "^1.0.8", "@wix/sdk-types": "^1.17.4" } }, "sha512-rydiZ6PVRafrQtUhzz2NGpfL+2Jd8PNDhWbHRHvZpNEqF5L/0DZ50PHMvsm0Evs2jmsj4gC/xo7bbZXe0BnvvQ=="],
 
-    "@wix/data": ["@wix/data@1.0.426", "", { "dependencies": { "@wix/auto_sdk_data_backups": "1.0.44", "@wix/auto_sdk_data_collections": "1.0.72", "@wix/auto_sdk_data_data-sync-jobs": "1.0.14", "@wix/auto_sdk_data_external-database": "1.0.26", "@wix/auto_sdk_data_external-database-connections": "1.0.42", "@wix/auto_sdk_data_indexes": "1.0.47", "@wix/auto_sdk_data_movement-jobs": "1.0.46", "@wix/auto_sdk_data_permissions": "1.0.43", "@wix/auto_sdk_data_sharing": "1.0.15", "@wix/auto_sdk_data_tasks": "1.0.34", "@wix/headless-cms": "^0.0.45", "@wix/wix-data-items-sdk": "^1.0.512" } }, "sha512-WQJ1KNsIltm5ZQ6AbCMcz2IDo4AZH7/ga2HcCgfD3bbIxgB9s3fSmADzM7hBFgbdd/BDgxJ8uZAd+yRTP/+gjw=="],
+    "@wix/data": ["@wix/data@1.0.427", "", { "dependencies": { "@wix/auto_sdk_data_backups": "1.0.45", "@wix/auto_sdk_data_collections": "1.0.73", "@wix/auto_sdk_data_data-sync-jobs": "1.0.15", "@wix/auto_sdk_data_external-database": "1.0.27", "@wix/auto_sdk_data_external-database-connections": "1.0.43", "@wix/auto_sdk_data_indexes": "1.0.48", "@wix/auto_sdk_data_movement-jobs": "1.0.47", "@wix/auto_sdk_data_permissions": "1.0.44", "@wix/auto_sdk_data_sharing": "1.0.16", "@wix/auto_sdk_data_tasks": "1.0.35", "@wix/headless-cms": "^0.0.45", "@wix/wix-data-items-sdk": "1.0.512" } }, "sha512-NyJkpsW95wKP0sxESdTJFW/l57QFcWhIMtZutCZDq8Oezata+6GNAROp5NKIpPSNZoICsmWBbVqA3GpfMQquLw=="],
 
     "@wix/error-handler-types": ["@wix/error-handler-types@1.19.0", "", { "dependencies": { "@babel/runtime": "^7.28.2" } }, "sha512-3z9eURV+VfhNp7tQ7FLOzjbkRvxRJt8bPkq0F9qrGj3/p6VUHB82PStdhPQgJRbqzYrgeiMKu1dQLN/9RXXq1g=="],
 
@@ -518,15 +518,15 @@
 
     "@wix/redirects": ["@wix/redirects@1.0.112", "", { "dependencies": { "@wix/auto_sdk_redirects_redirects": "1.0.40" } }, "sha512-8zZxYG3HR1qdXTdhkau712SbPCOuZqBsnvkc+/UfDEYmm0wArQZEuJuFNAKLDqM3b+lfpz6o/73hEmqDVcjCSw=="],
 
-    "@wix/sdk": ["@wix/sdk@1.21.4", "", { "dependencies": { "@wix/identity": "^1.0.104", "@wix/image-kit": "^1.114.0", "@wix/redirects": "^1.0.70", "@wix/sdk-context": "0.0.1", "@wix/sdk-runtime": "1.0.9", "@wix/sdk-types": "1.17.5", "jose": "^5.10.0", "type-fest": "^4.41.0" }, "optionalDependencies": { "graphql": "^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0" } }, "sha512-1iUJdbOKKc5eFdH6/Xc+xujSNrAXf9002k1UwCb+DVWzP+09NsZxtZDYKSVh1Fb6mLshj/O/e/uasrgkRlKT/w=="],
+    "@wix/sdk": ["@wix/sdk@1.21.5", "", { "dependencies": { "@wix/identity": "^1.0.104", "@wix/image-kit": "^1.114.0", "@wix/redirects": "^1.0.70", "@wix/sdk-context": "0.0.1", "@wix/sdk-runtime": "1.0.10", "@wix/sdk-types": "1.17.6", "jose": "^5.10.0", "type-fest": "^4.41.0" }, "optionalDependencies": { "graphql": "^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0" } }, "sha512-5cVB9H2RZXA87y3fu5rvQFg5Zu8uE5QV7KPNZIyr92Oi1DnMmwBemZF6wCqFR8DqAn25RMPT9aqYI/OfxwJjVw=="],
 
     "@wix/sdk-context": ["@wix/sdk-context@0.0.1", "", {}, "sha512-ziSzrceUC0KFn4IJIVBn1cXXKrZ49ZKG5tQ6fl+TpontyUw5p/Z4VofFUUsnqNl9JYCpYNTzIXpzwok93Vrl8A=="],
 
     "@wix/sdk-react-context": ["@wix/sdk-react-context@1.0.2", "", { "peerDependencies": { "react": "*" } }, "sha512-dX1A+IlLVzsW0pE7ZyhtJHNEeeCYnu/suELnHm4FrxX5alJl1JaEpHbvjuaCt6kD/kDP1iIu9Pu6AvyJUCtYrg=="],
 
-    "@wix/sdk-runtime": ["@wix/sdk-runtime@1.0.9", "", { "dependencies": { "@wix/sdk-context": "0.0.1", "@wix/sdk-types": "1.17.5" } }, "sha512-oPSFvD8yBLA9nQ7/XVFn8rorniD90OgYAMqwDsiauIwjCbQaqxENAaswHfJJNaLbgAnSmey6yQcb/raLIxIEUg=="],
+    "@wix/sdk-runtime": ["@wix/sdk-runtime@1.0.10", "", { "dependencies": { "@wix/sdk-context": "0.0.1", "@wix/sdk-types": "1.17.6" } }, "sha512-JB5Lqg4o6dmqEUVpGZkTNHTK6Th71A+ydUbCebVkRHut+QQQjqD/QPbxQLtWVWuqt9oItr9klJ4B5kENNuKz8w=="],
 
-    "@wix/sdk-types": ["@wix/sdk-types@1.17.5", "", { "dependencies": { "@wix/error-handler-types": "^1.19.0", "@wix/monitoring-types": "^0.12.0", "type-fest": "^4.41.0" } }, "sha512-5jS3tU3H4tgHY0wK6erZ+XmQjkD+LspZJaGYliYSbPqpr1rSTXHZq7CLIwzL5x+wY/haptADWti4okhl/XtQNw=="],
+    "@wix/sdk-types": ["@wix/sdk-types@1.17.6", "", { "dependencies": { "@wix/error-handler-types": "^1.19.0", "@wix/monitoring-types": "^0.12.0", "type-fest": "^4.41.0" } }, "sha512-vYy0cDuhZrF27rJTeQ+V1YpinmrLJqRqS6Woluf/ICP8WqqaSGQwtwBV6HC7bTrDAkQgTUUDfKxOCAKiMs8HjQ=="],
 
     "@wix/services-definitions": ["@wix/services-definitions@1.0.1", "", { "dependencies": { "type-fest": "^4.41.0" } }, "sha512-vvvBCxw75LtQd43HOUCywMntpy+VcqKGUiUHKdKVoxXRsPZMXHpZMi8l7H/cn2T2vInzUTvyDP90kCgs8zu36Q=="],
 
@@ -1207,8 +1207,6 @@
     "@typescript-eslint/eslint-plugin/ignore": ["ignore@7.0.5", "", {}, "sha512-Hs59xBNfUIunMFgWAbGX5cq6893IbWg4KnrjbYwX3tx0ztorVgTDA6B2sxf8ejHJ4wz8BqGUMYlnzNBer5NvGg=="],
 
     "@typescript-eslint/typescript-estree/minimatch": ["minimatch@9.0.5", "", { "dependencies": { "brace-expansion": "^2.0.1" } }, "sha512-G6T0ZX48xgozx7587koeX9Ys2NYy6Gmv//P89sEte9V9whIapMNF4idKxnW2QtCcLiTWlb/wfCabAtAFWhhBow=="],
-
-    "@wix/error-handler-types/@babel/runtime": ["@babel/runtime@7.29.2", "", {}, "sha512-JiDShH45zKHWyGe4ZNVRrCjBz8Nh9TMmZG1kh4QTK8hCBTWBi8Da+i7s1fJw7/lYpM4ccepSNfqzZ/QvABBi5g=="],
 
     "@wix/filter-builder/@babel/runtime": ["@babel/runtime@7.29.2", "", {}, "sha512-JiDShH45zKHWyGe4ZNVRrCjBz8Nh9TMmZG1kh4QTK8hCBTWBi8Da+i7s1fJw7/lYpM4ccepSNfqzZ/QvABBi5g=="],
 
