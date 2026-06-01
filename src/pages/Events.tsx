@@ -168,7 +168,7 @@ const Events = () => {
           </h2>
           <div className="space-y-3">
             {[
-              { tag: "JUNE 20, 2026 • 9:00 AM – 3:00 PM", name: "Day of Reflection", location: "Christ the King Catholic Church", color: "hsl(282, 44%, 47%)" },
+              { tag: "JULY 20, 2026 • 8:00 AM – 3:00 PM", name: "Day of Reflection", location: "Christ the King Catholic Church", color: "hsl(282, 44%, 47%)" },
               { tag: "DECEMBER 2026 • 3:30 PM", name: "Advent Memorial Mass and Ultreya", location: "National Shrine of Our Lady of La Leche", color: "hsl(204, 60%, 44%)" },
             ].map((event, i) => (
               <EventCard
