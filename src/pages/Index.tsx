@@ -234,7 +234,7 @@ const Index = () => {
           <div ref={reveal} className="fade-up grid grid-cols-1 md:grid-cols-2 gap-5">
             {[
               { month: "Sep", day: "3", type: "English Weekend", title: "Men's #140", detail: "September 3–6, 2026", action: "Register →", to: "/documents" },
-              { month: "Sep", day: "17", type: "English Weekend", title: "Women's #138", detail: "September 17–20, 2026", action: "Register →", to: "/documents" },
+              { month: "Sep", day: "10", type: "English Weekend", title: "Women's #138", detail: "September 10–13, 2026", action: "Register →", to: "/documents" },
               { month: "Jul", day: "20", type: "Special Event", title: "Day of Reflection", detail: "July 20, 2026 · 8:00 AM – 3:00 PM\nChrist the King Catholic Church", action: "Learn more →", to: "/events" },
               { month: "Sep", day: "—", type: "Spanish Weekend", title: "Men's & Women's", detail: "September 2026 · Dates TBA", action: "Stay updated →", to: "/events" },
             ].map((event, i) => (
